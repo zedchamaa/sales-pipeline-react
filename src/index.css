@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Gray Colors */
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #eaecf0;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #101828;
+  /* Blue Gray Colors */
+  --color-blue-gray-25: #fcfcfd;
+  --color-blue-gray-50: #f8f9fc;
+  --color-blue-gray-100: #eaecf5;
+  --color-blue-gray-200: #d5d9eb;
+  --color-blue-gray-300: #afb5d9;
+  --color-blue-gray-400: #717bbc;
+  --color-blue-gray-500: #4e5ba6;
+  --color-blue-gray-600: #3e4784;
+  --color-blue-gray-700: #363f72;
+  --color-blue-gray-800: #293056;
+  --color-blue-gray-900: #101323;
+  /* Accent Colors */
+  --color-accent-white: #fff;
+  --color-accent-black: #000;
+  --color-accent-red: #f04438;
+  --color-accent-green: #32d583;
+  --color-accent-yellow: #f79009;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+
+::selection {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-700);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-500);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  width: auto;
+}
+
+h1,
+h2 {
+  color: var(--color-gray-900);
+}
+
+h3,
+h4 {
+  color: var(--color-gray-500);
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  body {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
