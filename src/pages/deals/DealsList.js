@@ -1,7 +1,7 @@
 import { useFirestore } from '../../hooks/useFirestore';
 
 // styles
-import styles from './Home.module.css';
+import styles from './Deals.module.css';
 
 export default function DealsList({ deals }) {
   const { deleteDocument } = useFirestore('deals');

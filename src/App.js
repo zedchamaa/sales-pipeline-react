@@ -1,31 +1,34 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
 
 // pages & components
-import Home from './pages/home/Home'
-import Login from './pages/login/Login'
-import Signup from './pages/signup/Signup'
-import Navbar from './components/Navbar'
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
+import Navbar from './components/Navbar';
+import Pipeline from './pages/home/Pipeline';
 
 function App() {
-  const { authIsReady, user } = useAuthContext()
+  const { authIsReady, user } = useAuthContext();
 
   return (
-    <div className="App">
+    <div className='App'>
       {authIsReady && (
         <BrowserRouter>
           <Navbar />
           <Switch>
-            <Route exact path="/">
-              {!user && <Redirect to="/login" />}
-              {user && <Home />}
+            <Route
+              exact
+              path='/'
+            >
+              {!user && <Redirect to='/login' />}
+              {user && <Pipeline />}
             </Route>
-            <Route path="/login">
-              {user && <Redirect to="/" />}
+            <Route path='/login'>
+              {user && <Redirect to='/' />}
               {!user && <Login />}
             </Route>
-            <Route path="/signup">
-              {user && user.displayName && <Redirect to="/" />}
+            <Route path='/signup'>
+              {user && user.displayName && <Redirect to='/' />}
               {!user && <Signup />}
             </Route>
           </Switch>
@@ -35,4 +38,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
