@@ -1,0 +1,117 @@
+.form-container {
+  align-items: center;
+  background-color: var(--color-accent-white);
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  height: 50.4rem;
+  justify-content: center;
+  left: 1.6rem;
+  padding: 4.8rem 1.6rem;
+  position: absolute;
+  top: 13rem;
+  width: 34.3rem;
+}
+
+.top-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  height: 6.4rem;
+  padding: 0px;
+  width: 31.1rem;
+}
+
+.middle-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  height: 27.2rem;
+  padding: 0px;
+  width: 31.1rem;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 16rem;
+  width: 31.1rem;
+}
+
+.form-container span {
+  color: var(--color-gray-700);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.form-container input {
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-300);
+  color: var(--color-gray-400);
+  font-size: 1.6rem;
+  height: 4.4rem;
+  outline: 0;
+  padding: 1rem 1.4rem;
+  transition: border 0.15s, box-shadow 0.15s;
+  width: 31.1rem;
+}
+
+.form-container input:focus {
+  border: 1px solid var(--color-blue-gray-500);
+  box-shadow: 0 0 0 5px var(--color-accent);
+}
+
+.form-container input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-gray-400);
+  font-size: 1.6rem;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--color-gray-400);
+  font-size: 1.6rem;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--color-gray-400);
+  font-size: 1.6rem;
+}
+
+.forgot-password {
+  text-align: right;
+  width: 100%;
+}
+
+.btn {
+  background-color: var(--color-blue-gray-500);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  color: var(--color-accent-white);
+  font-size: 1.6rem;
+  height: 4.4rem;
+  line-height: 2.4rem;
+  padding: 1rem 1.8rem;
+  width: 31.1rem;
+  border: none;
+}
+
+.bottom-container {
+  height: 2.4rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* @media screen and (min-width: 768px) {
+  .form-container {
+    margin: 20px auto;
+  }
+} */
