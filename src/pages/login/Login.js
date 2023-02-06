@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
 
 // styles
@@ -63,7 +64,10 @@ export default function Login() {
 
       <div className={styles['bottom-container']}>
         <p>
-          Don't have an account? <strong>Sign Up</strong>
+          Don't have an account?{' '}
+          <Link to='/signup'>
+            <strong>Sign Up</strong>
+          </Link>
         </p>
         {error && <p>{error}</p>}
       </div>
