@@ -141,6 +141,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--color-blue-gray-400);
+}
+
 /* App */
 
 .App {
