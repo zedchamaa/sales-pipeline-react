@@ -69,7 +69,7 @@ export default function Login() {
             <strong>Sign Up</strong>
           </Link>
         </p>
-        {error && <p>{error}</p>}
+        {error && <div className='form-alert'>{error}</div>}
       </div>
     </form>
   );
