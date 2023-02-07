@@ -22,7 +22,7 @@ export default function Login() {
     >
       <div className={styles['top-container']}>
         <h1>Login to your account</h1>
-        <p>Welcome back! Please enter your details.</p>
+        <p>Welcome! Please enter your details.</p>
       </div>
 
       <div className={styles['middle-container']}>
