@@ -47,6 +47,7 @@ export default function Signup() {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               placeholder='example@email.com'
+              required
             />
           </label>
           <label>
@@ -56,6 +57,7 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               placeholder='Enter password'
+              required
             />
           </label>
           <label>
@@ -65,6 +67,7 @@ export default function Signup() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               value={confirmPassword}
               placeholder='Confirm password'
+              required
             />
           </label>
           {showAlert && (
@@ -77,6 +80,7 @@ export default function Signup() {
               onChange={(e) => setDisplayName(e.target.value)}
               value={displayName}
               placeholder='Enter display name'
+              required
             />
           </label>
         </div>
