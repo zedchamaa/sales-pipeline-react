@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-accent-white);
+  font-size: 2rem;
+  line-height: 3rem;
+  max-height: 15rem;
+  overflow: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.children {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
