@@ -15,6 +15,14 @@
 
 .children {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .children {
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+  }
 }

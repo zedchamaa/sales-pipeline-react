@@ -21,7 +21,8 @@ export default function Login() {
   return (
     <>
       <Announcement title={'Demo Login Details'}>
-        <p>Email: dev@zedchamaa.com</p> | <p>Password: demoapp</p>
+        <p>Email: dev@zedchamaa.com</p>
+        <p>Password: demoapp</p>
       </Announcement>
       <form
         onSubmit={handleSubmit}
