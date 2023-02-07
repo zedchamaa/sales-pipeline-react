@@ -4,8 +4,9 @@ import { useAuthContext } from './hooks/useAuthContext';
 // pages & components
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
-import Navbar from './components/Navbar';
 import Pipeline from './pages/home/Pipeline';
+import Deals from './pages/deals/Deals';
+import Footer from './components/Footer';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -14,7 +15,6 @@ function App() {
     <div className='App'>
       {authIsReady && (
         <BrowserRouter>
-          <Navbar />
           <Switch>
             <Route
               exact
@@ -22,6 +22,13 @@ function App() {
             >
               {!user && <Redirect to='/login' />}
               {user && <Pipeline />}
+            </Route>
+            <Route
+              exact
+              path='/deals'
+            >
+              {!user && <Redirect to='/login' />}
+              {user && <Deals />}
             </Route>
             <Route path='/login'>
               {user && <Redirect to='/' />}
@@ -32,6 +39,7 @@ function App() {
               {!user && <Signup />}
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       )}
     </div>
