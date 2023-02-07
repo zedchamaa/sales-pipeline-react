@@ -112,8 +112,25 @@
   width: 100%;
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .form-container {
-    margin: 20px auto;
+    height: 56.2rem;
+    width: 45.8rem;
   }
-} */
+  .top-container {
+    height: 7.4rem;
+    width: 39.4rem;
+  }
+  .middle-container {
+    width: 39.4rem;
+  }
+  .labels {
+    width: 39.4rem;
+  }
+  .form-container input {
+    width: 39.4rem;
+  }
+  .btn {
+    width: 39.4rem;
+  }
+}
