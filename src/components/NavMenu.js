@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
@@ -18,54 +19,69 @@ import HorizontalRuleIcon from './icons/HorizontalRuleIcon';
 export default function NavMenu() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(true);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+  const handleMenuOpen = () => {
+    setOpenMobileMenu(true);
+    setShowHamburgerMenu(false);
+  };
+
+  const handleMenuClose = () => {
+    setOpenMobileMenu(false);
+    setShowHamburgerMenu(true);
+  };
 
   return (
     <>
       <div>
-        <div className={styles['container']}>
-          <Logo />
-          <HamburgerMenu />
-        </div>
-      </div>
-      <div className={styles['opened-menu']}>
-        <div className={styles['top-menu']}>
-          <Logo />
-          <CloseIcon />
-        </div>
-        <div className={styles['menu-items']}>
-          <div className={styles['link-container']}>
-            <PipelineIcon />
-            <Link to='/'>Pipeline</Link>
+        {showHamburgerMenu && (
+          <div className={styles['container']}>
+            <Logo />
+            <HamburgerMenu onClick={handleMenuOpen} />
           </div>
-          <div className={styles['link-container']}>
-            <DealsIcon />
-            <Link to='/deals'>Deals</Link>
+        )}
+      </div>
+      {openMobileMenu && (
+        <div className={styles['opened-menu']}>
+          <div className={styles['top-menu']}>
+            <Logo />
+            <CloseIcon onClick={handleMenuClose} />
+          </div>
+          <div className={styles['menu-items']}>
+            <div className={styles['link-container']}>
+              <PipelineIcon />
+              <Link to='/'>Pipeline</Link>
+            </div>
+            <div className={styles['link-container']}>
+              <DealsIcon />
+              <Link to='/deals'>Deals</Link>
+            </div>
+          </div>
+          <div className={styles['bottom-container']}>
+            {user && (
+              <>
+                <div className={styles['user-container']}>
+                  <AvatarIcon />
+                  {user.displayName}
+                </div>
+                <div>
+                  <HorizontalRuleIcon />
+                </div>
+                <div className={styles['signout-container']}>
+                  <SignoutIcon />
+                  <button
+                    className={styles['btn']}
+                    onClick={logout}
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
-        {/* <div>{user}</div> */}
-        <div className={styles['signout-container']}>
-          {user && (
-            <>
-              <div className={styles['user']}>
-                <AvatarIcon />
-                {user.displayName}
-              </div>
-              <div>
-                <HorizontalRuleIcon />
-              </div>
-              <div>
-                <SignoutIcon />
-                <button
-                  className='btn'
-                  onClick={logout}
-                >
-                  Sign Out
-                </button>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
+      )}
     </>
   );
 }
