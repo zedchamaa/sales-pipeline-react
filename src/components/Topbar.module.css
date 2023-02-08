@@ -1,0 +1,7 @@
+.container {
+  background-color: var(--color-accent-white);
+  display: flex;
+  height: 8.8rem;
+  padding: 1.6rem 3.2rem;
+  width: 100%;
+}
