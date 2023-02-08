@@ -35,15 +35,15 @@ export default function Signup() {
     <>
       <form
         onSubmit={handleSubmit}
-        className={styles['form-container']}
+        className={styles.formContainer}
       >
-        <div className={styles['top-container']}>
+        <div className={styles.topContainer}>
           <h1>Create a new account</h1>
           <p>Please enter your details.</p>
         </div>
 
-        <div className={styles['middle-container']}>
-          <div className={styles['labels']}>
+        <div className={styles.middleContainer}>
+          <div className={styles.labels}>
             <label>
               <span>Email</span>
               <input
@@ -89,10 +89,10 @@ export default function Signup() {
             </label>
           </div>
           <div>
-            {!isPending && <button className={styles['btn']}>Register</button>}
+            {!isPending && <button className={styles.btn}>Register</button>}
             {isPending && (
               <button
-                className={styles['btn']}
+                className={styles.btn}
                 disabled
               >
                 Loading...
@@ -100,7 +100,7 @@ export default function Signup() {
             )}
           </div>
         </div>
-        <div className={styles['bottom-container']}>
+        <div className={styles.bottomContainer}>
           <p>
             Have an account?{' '}
             <Link to='/login'>

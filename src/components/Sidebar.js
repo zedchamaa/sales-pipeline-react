@@ -10,12 +10,12 @@ import DealsIcon from './icons/DealsIcon';
 
 export default function Sidebar() {
   return (
-    <div className={styles['container']}>
-      <div className={styles['logo']}>
+    <div className={styles.container}>
+      <div className={styles.logo}>
         <Logo />
       </div>
-      <div className={styles['menu-items']}>
-        <div className={styles['link-container']}>
+      <div className={styles.menuItems}>
+        <div className={styles.linkContainer}>
           <PipelineIcon />
           <NavLink
             exact
@@ -24,7 +24,7 @@ export default function Sidebar() {
             Pipeline
           </NavLink>
         </div>
-        <div className={styles['link-container']}>
+        <div className={styles.linkContainer}>
           <DealsIcon />
           <NavLink to='/deals'>Deals</NavLink>
         </div>

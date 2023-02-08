@@ -27,15 +27,15 @@ export default function Login() {
       </Announcement>
       <form
         onSubmit={handleSubmit}
-        className={styles['form-container']}
+        className={styles.formContainer}
       >
-        <div className={styles['top-container']}>
+        <div className={styles.topContainer}>
           <h1>Login to your account</h1>
           <p>Welcome! Please enter your details.</p>
         </div>
 
-        <div className={styles['middle-container']}>
-          <div className={styles['labels']}>
+        <div className={styles.middleContainer}>
+          <div className={styles.labels}>
             <label>
               <span>Email</span>
               <input
@@ -57,14 +57,14 @@ export default function Login() {
               />
             </label>
           </div>
-          <div className={styles['forgot-password']}>
+          <div className={styles.forgotPassword}>
             <h3>Forgot password?</h3>
           </div>
           <div>
-            {!isPending && <button className={styles['btn']}>Login</button>}
+            {!isPending && <button className={styles.btn}>Login</button>}
             {isPending && (
               <button
-                className={styles['btn']}
+                className={styles.btn}
                 disabled
               >
                 Loading...
@@ -73,7 +73,7 @@ export default function Login() {
           </div>
         </div>
 
-        <div className={styles['bottom-container']}>
+        <div className={styles.bottomContainer}>
           <p>
             Don't have an account?{' '}
             <Link to='/signup'>

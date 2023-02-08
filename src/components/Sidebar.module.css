@@ -12,7 +12,7 @@
   margin: 3.2rem 1.4rem;
 }
 
-.menu-items {
+.menuItems {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   width: 100%;
 }
 
-.link-container {
+.linkContainer {
   align-items: flex-start;
   border-radius: 8px;
   display: flex;
@@ -35,11 +35,11 @@
   width: 100%;
 }
 
-.link-container:focus-within {
+.linkContainer:focus-within {
   background-color: var(--color-accent-yellow);
   cursor: pointer;
 }
 
-.link-container a {
+.linkContainer a {
   color: var(--color-accent-white);
 }

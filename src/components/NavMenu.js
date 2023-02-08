@@ -36,20 +36,20 @@ export default function NavMenu() {
     <>
       <div>
         {showHamburgerMenu && (
-          <div className={styles['container']}>
+          <div className={styles.container}>
             <Logo />
             <HamburgerMenu onClick={handleMenuOpen} />
           </div>
         )}
       </div>
       {openMobileMenu && (
-        <div className={styles['opened-menu']}>
-          <div className={styles['top-menu']}>
+        <div className={styles.openedMenu}>
+          <div className={styles.topMenu}>
             <Logo />
             <CloseIcon onClick={handleMenuClose} />
           </div>
-          <div className={styles['menu-items']}>
-            <div className={styles['link-container']}>
+          <div className={styles.menuItems}>
+            <div className={styles.linkContainer}>
               <PipelineIcon />
               <NavLink
                 exact
@@ -58,25 +58,25 @@ export default function NavMenu() {
                 Pipeline
               </NavLink>
             </div>
-            <div className={styles['link-container']}>
+            <div className={styles.linkContainer}>
               <DealsIcon />
               <NavLink to='/deals'>Deals</NavLink>
             </div>
           </div>
-          <div className={styles['bottom-container']}>
+          <div className={styles.bottomContainer}>
             {user && (
               <>
-                <div className={styles['user-container']}>
+                <div className={styles.userContainer}>
                   <AvatarIcon />
                   {user.displayName}
                 </div>
                 <div>
                   <HorizontalRuleIcon />
                 </div>
-                <div className={styles['signout-container']}>
+                <div className={styles.signoutContainer}>
                   <SignoutIcon />
                   <button
-                    className={styles['btn']}
+                    className={styles.btn}
                     onClick={logout}
                   >
                     Sign Out

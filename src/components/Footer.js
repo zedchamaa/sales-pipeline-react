@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
   return (
     <footer>
-      <div className={styles['copyright']}>
+      <div className={styles.copyright}>
         Copyright &copy; {currentYear}
         <a
           target='_blank'

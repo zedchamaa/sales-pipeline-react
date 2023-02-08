@@ -21,18 +21,18 @@ export default function Deals() {
   );
 
   return (
-    <div className={styles['page-container']}>
-      <div className={styles['sidebar']}>
+    <div className={styles.pageContainer}>
+      <div className={styles.sidebar}>
         <Sidebar />
       </div>
       <div>
         <NavMenu />
       </div>
-      <div className={styles['topbar']}>
+      <div className={styles.topbar}>
         <Topbar />
       </div>
 
-      <div className={styles['main-content']}>
+      <div className={styles.mainContent}>
         <h1>Deals Page</h1>
         {/* <div className={styles.container}>
         <div className={styles.content}>
@@ -44,7 +44,7 @@ export default function Deals() {
         </div>
       </div> */}
       </div>
-      <div className={styles['footer']}>
+      <div className={styles.footer}>
         <Footer />
       </div>
     </div>

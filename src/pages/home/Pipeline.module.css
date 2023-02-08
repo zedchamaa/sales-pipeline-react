@@ -1,4 +1,4 @@
-.page-container {
+.pageContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (min-width: 415px) {
-  .page-container {
+  .pageContainer {
     display: grid;
     grid-template: 10rem auto 5rem / auto 1fr;
     grid-template-areas:
@@ -31,7 +31,7 @@
   .topbar {
     grid-area: header;
   }
-  .main-content {
+  .mainContent {
     grid-area: main;
   }
   .footer {

@@ -9,13 +9,13 @@
   width: 100%;
 }
 
-.opened-menu {
+.openedMenu {
   background-color: var(--color-blue-gray-500);
   height: 100vh;
   width: 100vw;
 }
 
-.top-menu {
+.topMenu {
   align-items: center;
   background-color: var(--color-blue-gray-500);
   display: flex;
@@ -27,7 +27,7 @@
   width: 100%;
 }
 
-.menu-items {
+.menuItems {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.link-container {
+.linkContainer {
   align-items: flex-start;
   border-radius: 8px;
   display: flex;
@@ -50,16 +50,16 @@
   width: 34.3rem;
 }
 
-.link-container:focus-within {
+.linkContainer:focus-within {
   background-color: var(--color-accent-yellow);
   cursor: pointer;
 }
 
-.link-container a {
+.linkContainer a {
   color: var(--color-accent-white);
 }
 
-.bottom-container {
+.bottomContainer {
   background-color: var(--color-gray-25);
   border-radius: 12px;
   bottom: 4.8rem;
@@ -74,7 +74,7 @@
   width: 34.3rem;
 }
 
-.user-container {
+.userContainer {
   align-items: center;
   color: var(--color-gray-900);
   display: flex;
@@ -85,7 +85,7 @@
   padding: 0 1.2rem;
 }
 
-.signout-container {
+.signoutContainer {
   align-items: center;
   display: flex;
   gap: 0.6rem;
@@ -102,7 +102,7 @@
   .container {
     display: none;
   }
-  .opened-menu {
+  .openedMenu {
     display: none;
   }
 }
