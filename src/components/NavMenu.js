@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
 
@@ -51,11 +51,16 @@ export default function NavMenu() {
           <div className={styles['menu-items']}>
             <div className={styles['link-container']}>
               <PipelineIcon />
-              <Link to='/'>Pipeline</Link>
+              <NavLink
+                exact
+                to='/'
+              >
+                Pipeline
+              </NavLink>
             </div>
             <div className={styles['link-container']}>
               <DealsIcon />
-              <Link to='/deals'>Deals</Link>
+              <NavLink to='/deals'>Deals</NavLink>
             </div>
           </div>
           <div className={styles['bottom-container']}>
