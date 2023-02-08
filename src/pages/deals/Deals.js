@@ -7,7 +7,10 @@ import styles from './Deals.module.css';
 // pages & components
 import DealsForm from './DealsForm';
 import DealsList from './DealsList';
-import Navbar from '../../components/Navbar';
+import NavMenu from '../../components/NavMenu';
+import Sidebar from '../../components/Sidebar';
+import Topbar from '../../components/Topbar';
+import Footer from '../../components/Footer';
 
 export default function Deals() {
   const { user } = useAuthContext();
@@ -18,9 +21,20 @@ export default function Deals() {
   );
 
   return (
-    <>
-      <Navbar />
-      <div className={styles.container}>
+    <div className={styles['page-container']}>
+      <div className={styles['sidebar']}>
+        <Sidebar />
+      </div>
+      <div>
+        <NavMenu />
+      </div>
+      <div className={styles['topbar']}>
+        <Topbar />
+      </div>
+
+      <div className={styles['main-content']}>
+        <h1>Deals Page</h1>
+        {/* <div className={styles.container}>
         <div className={styles.content}>
           {error && <p>{error}</p>}
           {documents && <DealsList deals={documents} />}
@@ -28,7 +42,11 @@ export default function Deals() {
         <div className={styles.sidebar}>
           <DealsForm uid={user.uid} />
         </div>
+      </div> */}
       </div>
-    </>
+      <div className={styles['footer']}>
+        <Footer />
+      </div>
+    </div>
   );
 }
