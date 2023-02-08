@@ -7,6 +7,7 @@ import styles from './Login.module.css';
 
 // pages & components
 import Announcement from '../../components/Announcement';
+import Footer from '../../components/Footer';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -82,6 +83,7 @@ export default function Login() {
           {error && <div className='form-alert'>{error}</div>}
         </div>
       </form>
+      <Footer />
     </>
   );
 }
