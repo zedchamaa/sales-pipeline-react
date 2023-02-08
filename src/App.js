@@ -6,7 +6,6 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Pipeline from './pages/home/Pipeline';
 import Deals from './pages/deals/Deals';
-import Footer from './components/Footer';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -39,7 +38,6 @@ function App() {
               {!user && <Signup />}
             </Route>
           </Switch>
-          <Footer />
         </BrowserRouter>
       )}
     </div>
