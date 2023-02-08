@@ -59,10 +59,6 @@
   color: var(--color-accent-white);
 }
 
-.link-container:focus-within a {
-  color: var(--color-accent-white);
-}
-
 .bottom-container {
   background-color: var(--color-gray-25);
   border-radius: 12px;
