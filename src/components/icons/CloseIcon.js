@@ -11,9 +11,9 @@ export default function CloseIcon({ onClick }) {
       <path
         d='M18 6.5L6 18.5M6 6.5L18 18.5'
         stroke='white'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );

@@ -11,9 +11,9 @@ export default function HamburgerMenu({ onClick }) {
       <path
         d='M3 12.5H21M3 6.5H21M3 18.5H21'
         stroke='white'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
