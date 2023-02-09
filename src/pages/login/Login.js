@@ -67,7 +67,7 @@ export default function Login() {
                 className={styles.btn}
                 disabled
               >
-                Loading...
+                loading...
               </button>
             )}
           </div>
