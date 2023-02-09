@@ -21,8 +21,8 @@
       'sidebar header'
       'sidebar  main'
       'sidebar footer';
-    border: 3px solid lightgrey;
     height: 100vh;
+    width: auto;
   }
   .sidebar {
     display: block;
