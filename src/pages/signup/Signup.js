@@ -95,7 +95,7 @@ export default function Signup() {
                 className={styles.btn}
                 disabled
               >
-                Loading...
+                loading...
               </button>
             )}
           </div>
