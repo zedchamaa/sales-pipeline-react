@@ -50,11 +50,6 @@
   width: 34.3rem;
 }
 
-.linkContainer:focus-within {
-  background-color: var(--color-accent-yellow);
-  cursor: pointer;
-}
-
 .linkContainer a {
   color: var(--color-accent-white);
 }
