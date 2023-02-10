@@ -1,0 +1,40 @@
+.modalBackdrop {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  margin: 200px auto;
+  max-width: 90vw;
+  padding: 3rem;
+  border: 2px solid red;
+  height: 50rem;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.icon {
+  color: red;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.icon:hover {
+  color: var(--color-lost);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 48rem;
+  }
+}

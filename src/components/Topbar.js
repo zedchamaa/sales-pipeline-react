@@ -8,7 +8,7 @@ import SearchDeals from './SearchDeals';
 import PlusIcon from '../components/icons/PlusIcon';
 import UserInfo from './UserInfo';
 
-export default function Topbar() {
+export default function Topbar({ onClick }) {
   const { logout } = useLogout();
 
   const handleSignout = () => {
@@ -20,7 +20,7 @@ export default function Topbar() {
       <SearchDeals />
       <div className={styles.buttonContainer}>
         <PlusIcon />
-        <button>New Deals</button>
+        <button onClick={onClick}>New Deals</button>
       </div>
       <UserInfo onClick={handleSignout} />
     </div>

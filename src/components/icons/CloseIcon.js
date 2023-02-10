@@ -1,4 +1,4 @@
-export default function CloseIcon({ onClick }) {
+export default function CloseIcon({ onClick, stroke, strokeWidth }) {
   return (
     <svg
       width='24'
@@ -10,8 +10,8 @@ export default function CloseIcon({ onClick }) {
     >
       <path
         d='M18 6.5L6 18.5M6 6.5L18 18.5'
-        stroke='white'
-        strokeWidth='2'
+        stroke={stroke}
+        strokeWidth={strokeWidth}
         strokeLinecap='round'
         strokeLinejoin='round'
       />

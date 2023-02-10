@@ -46,7 +46,11 @@ export default function NavMenu() {
         <div className={styles.openedMenu}>
           <div className={styles.topMenu}>
             <Logo />
-            <CloseIcon onClick={handleMenuClose} />
+            <CloseIcon
+              onClick={handleMenuClose}
+              stroke={'white'}
+              strokeWidth={'4'}
+            />
           </div>
           <div className={styles.menuItems}>
             <div className={styles.linkContainer}>
