@@ -4,6 +4,10 @@ import { useFirestore } from '../hooks/useFirestore';
 // styles
 import styles from './DealsForm.module.css';
 
+// pages & components
+import StagesMenu from './StagesMenu';
+import StatusMenu from './StatusMenu';
+
 export default function DealsForm({ uid, onClick }) {
   const { addDocument, response } = useFirestore('deals');
   const [name, setName] = useState('');
@@ -12,6 +16,16 @@ export default function DealsForm({ uid, onClick }) {
   const [stage, setStage] = useState('');
   const [status, setStatus] = useState('');
   const [alert, setAlert] = useState('');
+
+  // stage drop down menu
+  const handleStageChange = (selectedOption) => {
+    setStage(selectedOption.value);
+  };
+
+  // status drop down menu
+  const handleStatusChange = (selectedOption) => {
+    setStatus(selectedOption.value);
+  };
 
   const resetForm = () => {
     setName('');
@@ -25,10 +39,10 @@ export default function DealsForm({ uid, onClick }) {
     e.preventDefault();
 
     // form validation
-    if (stage === '' || stage === 'unknown') {
+    if (stage === '') {
       setAlert('*select a stage');
       return;
-    } else if (status === '' || status === 'unknown') {
+    } else if (status === '') {
       setAlert('*select a status');
       return;
     }
@@ -89,30 +103,11 @@ export default function DealsForm({ uid, onClick }) {
         </label>
         <label>
           <span>Deal Stage</span>
-          <select
-            className={styles.dropDownMenu}
-            onChange={(e) => setStage(e.target.value)}
-          >
-            <option value='unknown'>Select stage</option>
-            <option value='qualified'>Qualified</option>
-            <option value='demo'>Demo</option>
-            <option value='proposal'>Proposal</option>
-            <option value='negotiations'>Negotiations</option>
-            <option value='won'>Won</option>
-            <option value='lost'>Lost</option>
-          </select>
+          <StagesMenu onChange={handleStageChange} />
         </label>
         <label>
           <span>Deal Status</span>
-          <select
-            className={styles.dropDownMenu}
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <option value='unknown'>Select status</option>
-            <option value='inprogress'>In Progress</option>
-            <option value='good'>Good</option>
-            <option value='stalled'>Stalled</option>
-          </select>
+          <StatusMenu onChange={handleStatusChange} />
         </label>
         <div className='form-alert'>{alert}</div>
         <div className={styles.footer}>
