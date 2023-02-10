@@ -40,10 +40,10 @@ export default function DealsForm({ uid, onClick }) {
 
     // form validation
     if (stage === '') {
-      setAlert('*select a stage');
+      setAlert('>> select a stage <<');
       return;
     } else if (status === '') {
-      setAlert('*select a status');
+      setAlert('>> select a status <<');
       return;
     }
 
@@ -109,7 +109,7 @@ export default function DealsForm({ uid, onClick }) {
           <span>Deal Status</span>
           <StatusMenu onChange={handleStatusChange} />
         </label>
-        <div className='form-alert'>{alert}</div>
+        {alert && <div className='form-alert'>{alert}</div>}
         <div className={styles.footer}>
           <button
             className={styles.cancel}
