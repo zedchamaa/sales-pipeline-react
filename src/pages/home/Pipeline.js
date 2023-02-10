@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import styles from './Pipeline.module.css';
 
 // pages & components
+import DealsForm from '../../components/DealsForm';
 import NavMenu from '../../components/NavMenu';
 import Sidebar from '../../components/Sidebar';
 import Topbar from '../../components/Topbar';
@@ -11,6 +13,7 @@ import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
 
 export default function Pipeline() {
+  const { user } = useAuthContext();
   const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => {
@@ -24,8 +27,11 @@ export default function Pipeline() {
   return (
     <div className={styles.pageContainer}>
       {showModal && (
-        <Modal onClick={handleCloseModal}>
-          <h1>This is so cool!</h1>
+        <Modal
+          onClick={handleCloseModal}
+          title={'Add New Deal'}
+        >
+          <DealsForm uid={user.uid} />
         </Modal>
       )}
       <div className={styles.sidebar}>
