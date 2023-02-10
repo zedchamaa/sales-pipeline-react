@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useFirestore } from '../../hooks/useFirestore';
+import { useFirestore } from '../hooks/useFirestore';
 
 export default function DealsForm({ uid }) {
   const { addDocument, response } = useFirestore('deals');
