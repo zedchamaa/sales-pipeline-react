@@ -70,3 +70,12 @@
   padding: 1rem 1.8rem;
   width: 14.15rem;
 }
+
+@media screen and (min-width: 415px) {
+  .formContainer .footer .cancel {
+    width: 22.15rem;
+  }
+  .formContainer .footer .confirm {
+    width: 22.15rem;
+  }
+}
