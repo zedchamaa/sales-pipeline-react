@@ -38,7 +38,10 @@ export default function Deals() {
           onClick={handleCloseModal}
           title={'Add New Deal'}
         >
-          <DealsForm uid={user.uid} />
+          <DealsForm
+            uid={user.uid}
+            onClick={handleCloseModal}
+          />
         </Modal>
       )}
       <div className={styles.sidebar}>

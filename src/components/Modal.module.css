@@ -10,8 +10,8 @@
 .modal {
   background: var(--color-accent-white);
   border-radius: 1.2rem;
-  height: 64.1rem;
-  margin: 20rem auto;
+  height: fit-content;
+  margin: 10rem auto;
   max-width: 90vw;
   padding: 3rem;
   width: 34.3rem;
