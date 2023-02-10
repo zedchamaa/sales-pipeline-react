@@ -6,7 +6,7 @@ import { useCollection } from '../../hooks/useCollection';
 import styles from './Deals.module.css';
 
 // pages & components
-import DealsForm from './DealsForm';
+import DealsForm from '../../components/DealsForm';
 import DealsList from './DealsList';
 import NavMenu from '../../components/NavMenu';
 import Sidebar from '../../components/Sidebar';
@@ -34,8 +34,11 @@ export default function Deals() {
   return (
     <div className={styles.pageContainer}>
       {showModal && (
-        <Modal onClick={handleCloseModal}>
-          <h1>This is so cool!</h1>
+        <Modal
+          onClick={handleCloseModal}
+          title={'Add New Deal'}
+        >
+          <DealsForm uid={user.uid} />
         </Modal>
       )}
       <div className={styles.sidebar}>
@@ -49,14 +52,9 @@ export default function Deals() {
       </div>
       <div className={styles.mainContent}>
         <h1>Deals Page</h1>
-        <div className={styles.container}>
-          <div className={styles.content}>
-            {error && <p>{error}</p>}
-            {documents && <DealsList deals={documents} />}
-          </div>
-          <div className={styles.sidebar}>
-            <DealsForm uid={user.uid} />
-          </div>
+        <div>
+          {error && <p>{error}</p>}
+          {documents && <DealsList deals={documents} />}
         </div>
       </div>
       <div className={styles.footer}>
