@@ -42,11 +42,11 @@ export default function DealsForm({ uid, onClick }) {
     e.preventDefault();
 
     // form validation
-    if (stage === '') {
-      setAlert('>> select a stage <<');
+    if (!stage) {
+      setAlert('Please select a stage');
       return;
-    } else if (status === '') {
-      setAlert('>> select a status <<');
+    } else if (!status) {
+      setAlert('Please select a status');
       return;
     }
 
