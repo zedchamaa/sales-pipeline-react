@@ -8,6 +8,30 @@
   display: none;
 }
 
+.mainContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.6rem;
+}
+
+.pageTitle {
+  color: var(--color-gray-900);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+}
+
+.dealsSummary {
+  color: var(--color-gray-500);
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 600;
+  gap: 8px;
+  line-height: 2.8rem;
+  margin-top: 1.2rem;
+}
+
 .footer {
   min-height: 100vh;
   width: 100vw;
@@ -33,6 +57,9 @@
   }
   .mainContent {
     grid-area: main;
+  }
+  .pageTitle {
+    font-size: 3.6rem;
   }
   .footer {
     grid-area: footer;

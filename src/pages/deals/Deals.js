@@ -4,12 +4,16 @@ import { useCollection } from '../../hooks/useCollection';
 // styles
 import styles from './Deals.module.css';
 
+// libraries
+import { formatNumber } from 'accounting';
+
 // pages & components
 import DealsList from './DealsList';
 import NavMenu from '../../components/NavMenu';
 import Sidebar from '../../components/Sidebar';
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
+import EllipseIcon from '../../components/icons/EllipseIcon';
 
 export default function Deals() {
   const { user } = useAuthContext();
@@ -18,6 +22,10 @@ export default function Deals() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
+
+  const numberOfDeals = documents.length;
+
+  const dealsTotalValue = documents.reduce((acc, deal) => acc + deal.amount, 0);
 
   return (
     <div className={styles.pageContainer}>
@@ -31,8 +39,15 @@ export default function Deals() {
         <Topbar />
       </div>
       <div className={styles.mainContent}>
-        <h1>Deals Page</h1>
         <div>
+          <span className={styles.pageTitle}>Deals</span>
+          <div className={styles.dealsSummary}>
+            <div> {numberOfDeals} Deals</div>
+            <div>
+              <EllipseIcon />
+            </div>
+            <div> ${formatNumber(dealsTotalValue)}</div>
+          </div>
           {error && <p>{error}</p>}
           {documents && <DealsList deals={documents} />}
         </div>
