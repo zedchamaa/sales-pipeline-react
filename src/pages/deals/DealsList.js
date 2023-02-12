@@ -34,46 +34,50 @@ export default function DealsList({ deals }) {
           </div>
         </div>
         <div className={styles.cardBottom}>
-          <div className={styles.content}>
-            <div className={styles.colOne}>
-              <span className={styles.dealInfo}>Deal Value</span>
+          <div className={styles.blockA}>
+            <div className={styles.content}>
+              <div className={styles.colOne}>
+                <span className={styles.dealInfo}>Deal Value</span>
+              </div>
+              <div className={styles.colTwo}>
+                <span className={styles.dealValue}>
+                  {formatNumber(deal.amount)}
+                </span>
+              </div>
             </div>
-            <div className={styles.colTwo}>
-              <span className={styles.dealValue}>
-                {formatNumber(deal.amount)}
-              </span>
-            </div>
-          </div>
-          <div className={styles.content}>
-            <div className={styles.colOne}>
-              <span className={styles.dealInfo}>Deal Status</span>
-            </div>
-            <div className={styles.colTwo}>
-              <div
-                className={
-                  (deal.status === 'In Progress' ? styles.inProgress : '') ||
-                  (deal.status === 'Very Good' ? styles.veryGood : '') ||
-                  (deal.status === 'Stalled' ? styles.stalled : '')
-                }
-              >
-                {deal.status}
+            <div className={styles.content}>
+              <div className={styles.colOne}>
+                <span className={styles.dealInfo}>Deal Status</span>
+              </div>
+              <div className={styles.colTwo}>
+                <div
+                  className={
+                    (deal.status === 'In Progress' ? styles.inProgress : '') ||
+                    (deal.status === 'Very Good' ? styles.veryGood : '') ||
+                    (deal.status === 'Stalled' ? styles.stalled : '')
+                  }
+                >
+                  {deal.status}
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.content}>
-            <div className={styles.colOne}>
-              <span className={styles.dealInfo}>Deal Stage</span>
+          <div className={styles.blockB}>
+            <div className={styles.content}>
+              <div className={styles.colOne}>
+                <span className={styles.dealInfo}>Deal Stage</span>
+              </div>
+              <div className={styles.colTwo}>
+                <span className={styles.dealStage}>{deal.stage}</span>
+              </div>
             </div>
-            <div className={styles.colTwo}>
-              <span className={styles.dealStage}>{deal.stage}</span>
-            </div>
-          </div>
-          <div className={styles.content}>
-            <div className={styles.colOne}>
-              <span className={styles.dealInfo}>Date Created</span>
-            </div>
-            <div className={styles.colTwo}>
-              <span className={styles.dealCreatedDate}>{deal.created}</span>
+            <div className={styles.content}>
+              <div className={styles.colOne}>
+                <span className={styles.dealInfo}>Date Created</span>
+              </div>
+              <div className={styles.colTwo}>
+                <span className={styles.dealCreatedDate}>{deal.created}</span>
+              </div>
             </div>
           </div>
         </div>

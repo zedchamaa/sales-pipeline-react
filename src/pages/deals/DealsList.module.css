@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
   margin-top: 1.6rem;
 }
 
@@ -47,6 +46,7 @@
 
 .icons {
   align-items: center;
+  cursor: pointer;
   display: flex;
   gap: 1.6rem;
   height: 4.4rem;
@@ -59,6 +59,18 @@
   flex-direction: column;
   gap: 1.6rem;
   padding: 1.6rem;
+}
+
+.blockA {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.blockB {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 }
 
 .content {
@@ -136,4 +148,35 @@
 .dealCreatedDate {
   color: var(--color-gray-900);
   font-weight: 400;
+}
+
+@media screen and (min-width: 415px) {
+  .container {
+    margin-top: 2.4rem;
+  }
+  .card {
+    height: 20.1rem;
+    width: 64.3rem;
+  }
+  .cardTop {
+    height: 9.6rem;
+    width: 100%;
+  }
+  .titles {
+    height: 6.4rem;
+    width: 49.9rem;
+  }
+  .icons {
+    gap: 2.4rem;
+    height: 4.8rem;
+    width: 9.6rem;
+  }
+  .cardBottom {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.6rem;
+  }
+  .content {
+    width: auto;
+  }
 }
