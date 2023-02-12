@@ -9,7 +9,7 @@ import styles from './DealsForm.module.css';
 import StagesMenu from './StagesMenu';
 import StatusMenu from './StatusMenu';
 
-export default function DealsForm({ uid, onClick }) {
+export default function DealsForm({ uid }) {
   const { addDocument, response } = useFirestore('deals');
   const { handleCloseModal } = useContext(ModalContext);
 
