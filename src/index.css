@@ -34,6 +34,10 @@
   --color-accent-alert: #ffebe9;
   --color-accent-green: #32d583;
   --color-accent-yellow: #f79009;
+  /* Other Colors */
+  --color-error-100: #fee4e2;
+  --color-success-100: #d1fadf;
+  --color-success-500: #12b76a;
 }
 
 *,
