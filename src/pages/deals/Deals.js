@@ -23,9 +23,16 @@ export default function Deals() {
     ['createdAt', 'desc']
   );
 
-  const numberOfDeals = documents.length;
+  let numberOfDeals;
+  let dealsTotalValue;
 
-  const dealsTotalValue = documents.reduce((acc, deal) => acc + deal.amount, 0);
+  if (documents) {
+    numberOfDeals = documents.length;
+  }
+
+  if (documents) {
+    dealsTotalValue = documents.reduce((acc, deal) => acc + deal.amount, 0);
+  }
 
   return (
     <div className={styles.pageContainer}>
@@ -38,20 +45,22 @@ export default function Deals() {
       <div className={styles.topbar}>
         <Topbar />
       </div>
-      <div className={styles.mainContent}>
-        <div>
-          <span className={styles.pageTitle}>Deals</span>
-          <div className={styles.dealsSummary}>
-            <div> {numberOfDeals} Deals</div>
-            <div>
-              <EllipseIcon />
+      {documents && (
+        <div className={styles.mainContent}>
+          <div>
+            <span className={styles.pageTitle}>Deals</span>
+            <div className={styles.dealsSummary}>
+              <div> {numberOfDeals} Deals</div>
+              <div>
+                <EllipseIcon />
+              </div>
+              <div> ${formatNumber(dealsTotalValue)}</div>
             </div>
-            <div> ${formatNumber(dealsTotalValue)}</div>
+            {error && <p>{error}</p>}
+            {documents && <DealsList deals={documents} />}
           </div>
-          {error && <p>{error}</p>}
-          {documents && <DealsList deals={documents} />}
         </div>
-      </div>
+      )}
       <div className={styles.footer}>
         <Footer />
       </div>
