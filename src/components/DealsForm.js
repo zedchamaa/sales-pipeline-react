@@ -115,12 +115,18 @@ export default function DealsForm({ uid, onClick }) {
         {alert && <div className='form-alert'>{alert}</div>}
         <div className={styles.footer}>
           <button
+            type='button'
             className={styles.cancel}
             onClick={handleCloseModal}
           >
             Cancel
           </button>
-          <button className={styles.confirm}>Confirm</button>
+          <button
+            type='submit'
+            className={styles.confirm}
+          >
+            Confirm
+          </button>
         </div>
       </form>
     </div>
