@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-300);
+  height: 31.1rem;
+  margin: auto;
+  width: 34.3rem;
+}
+
+.cardTop {
+  align-items: center;
+  background-color: var(--color-blue-gray-100);
+  display: flex;
+  gap: 1.6rem;
+  height: 12.6rem;
+  padding: 1.6rem;
+  width: 100%;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 9.4rem;
+  width: 21.5rem;
+}
+
+.dealName {
+  color: var(--color-gray-900);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.clientName {
+  color: var(--color-gray-900);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+}
+
+.icons {
+  align-items: center;
+  display: flex;
+  gap: 1.6rem;
+  height: 4.4rem;
+  justify-content: center;
+  width: 8rem;
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  gap: 1.3rem;
+  height: 2.4rem;
+  width: 31.1rem;
+}
+
+.colOne {
+  width: 14.4rem;
+}
+
+.colTwo {
+  width: auto;
+}
+
+.dealInfo,
+.dealValue,
+.dealStage,
+.dealCreatedDate {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.dealInfo {
+  color: var(--color-gray-500);
+  font-weight: 400;
+  width: 14.4rem;
+}
+
+.dealValue {
+  font-weight: 600;
+  color: var(--color-gray-900);
+  width: 8.7rem;
+}
+
+.inProgress,
+.veryGood,
+.stalled {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-weight: 700;
+  height: 3.1rem;
+  justify-content: center;
+  line-height: 1.452rem;
+  padding: 8px 12px;
+  width: 9.9rem;
+}
+
+.inProgress {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-500);
+}
+
+.veryGood {
+  background-color: var(--color-success-100);
+  color: var(--color-success-500);
+}
+
+.stalled {
+  background-color: var(--color-error-100);
+  color: var(--color-accent-red);
+}
+
+.dealStage {
+  color: var(--color-gray-900);
+  font-weight: 600;
+}
+
+.dealCreatedDate {
+  color: var(--color-gray-900);
+  font-weight: 400;
+}
