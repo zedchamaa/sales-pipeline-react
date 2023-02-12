@@ -3,7 +3,7 @@ import Select from 'react-select';
 export default function StatusMenu({ onChange }) {
   const statuses = [
     {
-      value: 'inprogress',
+      value: 'In Progress',
       label: 'In Progress',
       color: '#667085',
       backgroundColor: '#F2F4F7',
@@ -18,7 +18,7 @@ export default function StatusMenu({ onChange }) {
       lineHeight: '14.52px',
     },
     {
-      value: 'very-good',
+      value: 'Very Good',
       label: 'Very Good',
       color: '#12B76A',
       backgroundColor: '#D1FADF',
@@ -33,7 +33,7 @@ export default function StatusMenu({ onChange }) {
       lineHeight: '14.52px',
     },
     {
-      value: 'stalled',
+      value: 'Stalled',
       label: 'Stalled',
       color: '#F04438',
       backgroundColor: '#FEE4E2',

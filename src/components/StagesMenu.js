@@ -2,12 +2,12 @@ import Select from 'react-select';
 
 export default function StagesMenu({ onChange }) {
   const stages = [
-    { value: 'qualified', label: 'Qualified' },
-    { value: 'demo', label: 'Demo' },
-    { value: 'proposal', label: 'Proposal' },
-    { value: 'negotiations', label: 'Negotiations' },
-    { value: 'won', label: 'Won' },
-    { value: 'lost', label: 'Lost' },
+    { value: 'Qualified', label: 'Qualified' },
+    { value: 'Demo', label: 'Demo' },
+    { value: 'Proposal', label: 'Proposal' },
+    { value: 'Negotiations', label: 'Negotiations' },
+    { value: 'Won', label: 'Won' },
+    { value: 'Lost', label: 'Lost' },
   ];
 
   return (
