@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 
@@ -6,13 +5,11 @@ import { useCollection } from '../../hooks/useCollection';
 import styles from './Deals.module.css';
 
 // pages & components
-import DealsForm from '../../components/DealsForm';
 import DealsList from './DealsList';
 import NavMenu from '../../components/NavMenu';
 import Sidebar from '../../components/Sidebar';
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
-import Modal from '../../components/Modal';
 
 export default function Deals() {
   const { user } = useAuthContext();
@@ -21,29 +18,9 @@ export default function Deals() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <div className={styles.pageContainer}>
-      {showModal && (
-        <Modal
-          onClick={handleCloseModal}
-          title={'Add New Deal'}
-        >
-          <DealsForm
-            uid={user.uid}
-            onClick={handleCloseModal}
-          />
-        </Modal>
-      )}
       <div className={styles.sidebar}>
         <Sidebar />
       </div>
@@ -51,7 +28,7 @@ export default function Deals() {
         <NavMenu />
       </div>
       <div className={styles.topbar}>
-        <Topbar onClick={handleShowModal} />
+        <Topbar />
       </div>
       <div className={styles.mainContent}>
         <h1>Deals Page</h1>

@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useFirestore } from '../hooks/useFirestore';
+import { ModalContext } from '../context/ModalContext';
 
 // styles
 import styles from './DealsForm.module.css';
@@ -10,6 +11,8 @@ import StatusMenu from './StatusMenu';
 
 export default function DealsForm({ uid, onClick }) {
   const { addDocument, response } = useFirestore('deals');
+  const { handleCloseModal } = useContext(ModalContext);
+
   const [name, setName] = useState('');
   const [client, setClient] = useState('');
   const [amount, setAmount] = useState('');
@@ -58,7 +61,7 @@ export default function DealsForm({ uid, onClick }) {
     });
 
     // hide the modal
-    onClick();
+    handleCloseModal();
   };
 
   // reset the form fields
@@ -113,7 +116,7 @@ export default function DealsForm({ uid, onClick }) {
         <div className={styles.footer}>
           <button
             className={styles.cancel}
-            onClick={onClick}
+            onClick={handleCloseModal}
           >
             Cancel
           </button>
