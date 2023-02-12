@@ -14,11 +14,11 @@ export default function DealsList({ deals }) {
   const { deleteDocument } = useFirestore('deals');
 
   return deals.map((deal) => (
-    <div className={styles.container}>
-      <div
-        className={styles.card}
-        key={deal.id}
-      >
+    <div
+      key={deal.id}
+      className={styles.container}
+    >
+      <div className={styles.card}>
         <div className={styles.cardTop}>
           <div className={styles.titles}>
             <div className={styles.dealName}>{deal.name}</div>
@@ -41,7 +41,7 @@ export default function DealsList({ deals }) {
               </div>
               <div className={styles.colTwo}>
                 <span className={styles.dealValue}>
-                  {formatNumber(deal.amount)}
+                  ${formatNumber(deal.amount)}
                 </span>
               </div>
             </div>
