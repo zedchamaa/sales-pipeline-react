@@ -1,6 +1,6 @@
 import Select from 'react-select';
 
-export default function StagesMenu({ onChange }) {
+export default function StagesMenu({ onChange, stage }) {
   const stages = [
     { value: 'Qualified', label: 'Qualified' },
     { value: 'Demo', label: 'Demo' },
@@ -14,6 +14,7 @@ export default function StagesMenu({ onChange }) {
     <Select
       options={stages}
       onChange={onChange}
+      placeholder={stage}
     />
   );
 }

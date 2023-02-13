@@ -1,6 +1,6 @@
 import Select from 'react-select';
 
-export default function StatusMenu({ onChange }) {
+export default function StatusMenu({ onChange, status }) {
   const statuses = [
     {
       value: 'In Progress',
@@ -81,6 +81,7 @@ export default function StatusMenu({ onChange }) {
       options={statuses}
       onChange={onChange}
       styles={colorStyles}
+      placeholder={status}
     />
   );
 }
