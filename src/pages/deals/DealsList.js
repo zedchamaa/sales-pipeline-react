@@ -164,9 +164,19 @@ export default function DealsList({ deals }) {
                 />
               </div>
             </div>
-            <div className={styles.icons}>
-              <button onClick={handleCancel}>Cancel</button>
-              <button onClick={() => saveDeal(deal)}>Save</button>
+            <div className={styles.buttonsContainer}>
+              <button
+                className={styles.cancelBtn}
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+              <button
+                className={styles.saveBtn}
+                onClick={() => saveDeal(deal)}
+              >
+                Save
+              </button>
             </div>
           </div>
           <div className={styles.cardBottom}>
