@@ -1,5 +1,6 @@
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
+import { useEffect, useState } from 'react';
 
 // styles
 import styles from './Deals.module.css';
@@ -22,17 +23,23 @@ export default function Deals() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
+  const [dealsNumber, setDealsNumber] = useState(0);
+  const [dealsValue, setDealsValue] = useState(0);
 
-  let numberOfDeals;
-  let dealsTotalValue;
+  useEffect(() => {
+    if (documents) {
+      const numberOfDeals = documents.length;
+      setDealsNumber(numberOfDeals);
+    }
 
-  if (documents) {
-    numberOfDeals = documents.length;
-  }
-
-  if (documents) {
-    dealsTotalValue = documents.reduce((acc, deal) => acc + deal.amount, 0);
-  }
+    if (documents) {
+      const dealsTotalValue = documents.reduce(
+        (acc, deal) => acc + deal.amount,
+        0
+      );
+      setDealsValue(dealsTotalValue);
+    }
+  }, [documents]);
 
   return (
     <div className={styles.pageContainer}>
@@ -49,11 +56,11 @@ export default function Deals() {
         <div>
           <div className={styles.pageTitle}>Deals</div>
           <div className={styles.dealsSummary}>
-            <div> {numberOfDeals} Deals</div>
+            <div>{dealsNumber} Deals</div>
             <div>
               <EllipseIcon />
             </div>
-            <div> ${formatNumber(dealsTotalValue)}</div>
+            <div> ${formatNumber(dealsValue)}</div>
           </div>
           {error && <p>{error}</p>}
           {documents && <DealsList deals={documents} />}
