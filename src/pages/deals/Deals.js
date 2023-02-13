@@ -52,20 +52,22 @@ export default function Deals() {
       <div className={styles.topbar}>
         <Topbar />
       </div>
-      <div className={styles.mainContent}>
-        <div>
-          <div className={styles.pageTitle}>Deals</div>
-          <div className={styles.dealsSummary}>
-            <div>{dealsNumber} Deals</div>
-            <div>
-              <EllipseIcon />
+      {documents && (
+        <div className={styles.mainContent}>
+          <div>
+            <div className={styles.pageTitle}>Deals</div>
+            <div className={styles.dealsSummary}>
+              <div>{dealsNumber} Deals</div>
+              <div>
+                <EllipseIcon />
+              </div>
+              <div>${formatNumber(dealsValue)}</div>
             </div>
-            <div>${formatNumber(dealsValue)}</div>
+            {error && <p>{error}</p>}
+            {documents && <DealsList deals={documents} />}
           </div>
-          {error && <p>{error}</p>}
-          {documents && <DealsList deals={documents} />}
         </div>
-      </div>
+      )}
       <div className={styles.footer}>
         <Footer />
       </div>
