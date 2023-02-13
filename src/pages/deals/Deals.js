@@ -60,13 +60,12 @@ export default function Deals() {
             <div>
               <EllipseIcon />
             </div>
-            <div> ${formatNumber(dealsValue)}</div>
+            <div>${formatNumber(dealsValue)}</div>
           </div>
           {error && <p>{error}</p>}
           {documents && <DealsList deals={documents} />}
         </div>
       </div>
-
       <div className={styles.footer}>
         <Footer />
       </div>
