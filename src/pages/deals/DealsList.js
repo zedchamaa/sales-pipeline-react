@@ -185,7 +185,7 @@ export default function DealsList({ deals }) {
                 <div className={styles.colOne}>
                   <span className={styles.dealInfo}>Deal Value</span>
                 </div>
-                <div className={styles.colTwo}>
+                <div className={styles.colTwoEdit}>
                   <span className={styles.dealValue}>
                     <input
                       type='number'
@@ -199,7 +199,7 @@ export default function DealsList({ deals }) {
                 <div className={styles.colOne}>
                   <span className={styles.dealInfo}>Deal Status</span>
                 </div>
-                <div className={styles.colTwo}>
+                <div className={styles.colTwoEdit}>
                   <StatusMenu
                     status={deal.status}
                     onChange={handleStatusChange}
@@ -212,7 +212,7 @@ export default function DealsList({ deals }) {
                 <div className={styles.colOne}>
                   <span className={styles.dealInfo}>Deal Stage</span>
                 </div>
-                <div className={styles.colTwo}>
+                <div className={styles.colTwoEdit}>
                   <StagesMenu
                     stage={deal.stage}
                     onChange={handleStageChange}
@@ -223,7 +223,7 @@ export default function DealsList({ deals }) {
                 <div className={styles.colOne}>
                   <span className={styles.dealInfo}>Date Created</span>
                 </div>
-                <div className={styles.colTwo}>
+                <div className={styles.colTwoEdit}>
                   <span className={styles.dealCreatedDate}>{deal.created}</span>
                 </div>
               </div>
