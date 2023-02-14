@@ -4,6 +4,14 @@
   margin-top: 1.6rem;
 }
 
+.paginationContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+  width: auto;
+}
+
 .card {
   border-radius: 8px;
   border: 1px solid var(--color-gray-300);
