@@ -1,5 +1,6 @@
 import { useLogout } from '../hooks/useLogout';
 import { ModalContext } from '../context/ModalContext';
+import { useContext } from 'react';
 
 // styles
 import styles from './Topbar.module.css';
@@ -8,7 +9,6 @@ import styles from './Topbar.module.css';
 import SearchDeals from './SearchDeals';
 import PlusIcon from '../components/icons/PlusIcon';
 import UserInfo from './UserInfo';
-import { useContext } from 'react';
 
 export default function Topbar({ onClick }) {
   const { logout } = useLogout();

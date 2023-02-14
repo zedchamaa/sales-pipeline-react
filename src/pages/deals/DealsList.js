@@ -1,5 +1,7 @@
 import { useFirestore } from '../../hooks/useFirestore';
 import { useState, useEffect } from 'react';
+import { SearchContext } from '../../context/SearchContext';
+import { useContext } from 'react';
 
 // styles
 import styles from './DealsList.module.css';
@@ -16,6 +18,7 @@ import PaginationMenu from './PaginationMenu';
 
 export default function DealsList({ deals }) {
   const { deleteDocument, updateDocument } = useFirestore('deals');
+  const { searchTerm } = useContext(SearchContext);
 
   // pagination menu
   const [showPaginationMenu, setShowPaginationMenu] = useState(false);
@@ -116,7 +119,17 @@ export default function DealsList({ deals }) {
     setShowDeleteAlert(false);
   };
 
-  const displayDeals = deals
+  const filteredDeals = deals.filter(
+    (deal) =>
+      deal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      deal.client.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      deal.amount.toString().includes(searchTerm) ||
+      deal.status.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      deal.stage.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      deal.created.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const displayDeals = filteredDeals
     .slice(pagesVisited, pagesVisited + dealsPerPage)
     .map((deal) => {
       return (

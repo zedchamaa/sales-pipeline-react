@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { SearchContext } from '../context/SearchContext';
+import { useContext } from 'react';
+
 // styles
 import styles from './SearchDeals.module.css';
 
@@ -6,12 +8,7 @@ import styles from './SearchDeals.module.css';
 import SearchIcon from '../components/icons/SearchIcon';
 
 export default function SearchDeals() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleChangeSearchTerm = (e) => {
-    setSearchTerm(e.target.value);
-    console.log(searchTerm);
-  };
+  const { handleChangeSearchTerm } = useContext(SearchContext);
 
   return (
     <div className={styles.container}>
