@@ -16,10 +16,14 @@ import StatusMenu from '../../components/StatusMenu';
 export default function DealsList({ deals }) {
   const { deleteDocument, updateDocument } = useFirestore('deals');
 
-  // Deal card
+  // deal card
   const [showDealCard, setShowDealCard] = useState(true);
 
-  // Edit deal
+  // delete deal
+  const [alert, setAlert] = useState('');
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+
+  // edit deal
   const [showEditDeal, setShowEditDeal] = useState(false);
   const [dealName, setDealName] = useState('');
   const [clientName, setClientName] = useState('');
@@ -72,11 +76,48 @@ export default function DealsList({ deals }) {
     handleCancel();
   };
 
+  // show or hide the delete alert
+  const handleDeleteAlert = (deal) => {
+    setSelectedDeal(deal);
+    setAlert('Permanently delete this deal?');
+    setShowDeleteAlert(true);
+  };
+
+  // cancel the delete alert
+  const handleCancelAlert = () => {
+    setShowDeleteAlert(false);
+  };
+
+  // delete the deal on confirmation
+  const handleDeleteDeal = (deal) => {
+    deleteDocument(deal.id);
+    setShowDeleteAlert(false);
+  };
+
   return deals.map((deal) => (
     <div
       key={deal.id}
       className={styles.container}
     >
+      {showDeleteAlert && selectedDeal === deal && (
+        <div className={styles.deleteDealAlert}>
+          <div className='form-alert'>{alert}</div>
+          <div className={styles.deleteDeal}>
+            <button
+              className={styles.yesBtn}
+              onClick={() => handleDeleteDeal(deal)}
+            >
+              Yes
+            </button>
+            <button
+              className={styles.noBtn}
+              onClick={handleCancelAlert}
+            >
+              No
+            </button>
+          </div>
+        </div>
+      )}
       {showDealCard && (
         <div className={styles.card}>
           <div className={styles.cardTop}>
@@ -86,7 +127,7 @@ export default function DealsList({ deals }) {
             </div>
             <div className={styles.icons}>
               <div>
-                <TrashcanIcon onClick={() => deleteDocument(deal.id)} />
+                <TrashcanIcon onClick={() => handleDeleteAlert(deal)} />
               </div>
               <div>
                 <EditIcon onClick={() => editDeal(deal)} />
