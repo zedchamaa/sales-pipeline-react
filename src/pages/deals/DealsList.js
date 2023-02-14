@@ -16,7 +16,7 @@ import StagesMenu from '../../components/StagesMenu';
 import StatusMenu from '../../components/StatusMenu';
 import PaginationMenu from './PaginationMenu';
 
-export default function DealsList({ deals }) {
+export default function DealsList() {
   const { deleteDocument, updateDocument } = useFirestore('deals');
   const { filteredDeals } = useContext(DealsContext);
 
@@ -25,7 +25,7 @@ export default function DealsList({ deals }) {
   const [pageNumber, setPageNumber] = useState(0);
   const dealsPerPage = 10;
   const pagesVisited = pageNumber * dealsPerPage;
-  const pageCount = Math.ceil(deals.length / dealsPerPage);
+  const pageCount = Math.ceil(filteredDeals.length / dealsPerPage);
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -34,12 +34,12 @@ export default function DealsList({ deals }) {
   // Only show the pagination menu when deals
   // exceed the deals per page
   useEffect(() => {
-    if (deals.length > dealsPerPage) {
+    if (filteredDeals.length > dealsPerPage) {
       setShowPaginationMenu(true);
     } else {
       setShowPaginationMenu(false);
     }
-  }, [deals]);
+  }, [filteredDeals]);
 
   // deal card
   const [showDealCard, setShowDealCard] = useState(true);

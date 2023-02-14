@@ -84,7 +84,7 @@ export default function Deals() {
                 <div>${formatNumber(dealsValue)}</div>
               </div>
               {error && <p>{error}</p>}
-              {documents && <DealsList deals={documents} />}
+              {documents && <DealsList />}
             </div>
           </div>
         )}
