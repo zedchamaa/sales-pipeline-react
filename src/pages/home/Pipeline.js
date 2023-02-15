@@ -17,6 +17,7 @@ import Sidebar from '../../components/Sidebar';
 import Topbar from '../../components/Topbar';
 import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
+import DealsStage from './DealsStage';
 import EllipseIcon from '../../components/icons/EllipseIcon';
 
 export default function Pipeline() {
@@ -106,6 +107,7 @@ export default function Pipeline() {
                 <div>${formatNumber(dealsValue)}</div>
               </div>
               {error && <p>{error}</p>}
+              {documents && <DealsStage stageName='Qualified' />}
             </div>
           </div>
         )}
