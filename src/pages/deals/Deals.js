@@ -1,9 +1,8 @@
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { DealsContext } from '../../context/DealsContext';
 import { SearchContext } from '../../context/SearchContext';
-import { useContext } from 'react';
 
 // styles
 import styles from './Deals.module.css';
