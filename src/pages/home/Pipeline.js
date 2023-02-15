@@ -107,7 +107,16 @@ export default function Pipeline() {
                 <div>${formatNumber(dealsValue)}</div>
               </div>
               {error && <p>{error}</p>}
-              {documents && <DealsStage stageName='Qualified' />}
+              <div className={styles.dealsContainer}>
+                <div> {documents && <DealsStage stageName='Qualified' />}</div>
+                <div> {documents && <DealsStage stageName='Demo' />}</div>
+                <div> {documents && <DealsStage stageName='Proposal' />}</div>
+                <div>
+                  {documents && <DealsStage stageName='Negotiations' />}
+                </div>
+                <div> {documents && <DealsStage stageName='Won' />}</div>
+                <div> {documents && <DealsStage stageName='Lost' />}</div>
+              </div>
             </div>
           </div>
         )}

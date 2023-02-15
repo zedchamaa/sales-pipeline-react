@@ -9,11 +9,22 @@
 }
 
 .mainContent {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin: 1.6rem auto 0 auto;
-  width: 34.3rem;
+  margin: 1.6rem auto 0 0;
+  width: 100vw;
+}
+
+.dealsContainer {
+  display: grid;
+  gap: 1.6rem;
+  grid-auto-columns: minmax(1fr, 1fr);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  width: auto;
+}
+
+.dealsContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .pageTitle {
@@ -21,6 +32,7 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 3.8rem;
+  margin-left: 1.6rem;
   width: 34.3rem;
 }
 
@@ -31,6 +43,7 @@
   font-weight: 600;
   gap: 8px;
   line-height: 2.8rem;
+  margin-left: 1.6rem;
   margin-top: 1.2rem;
   width: 34.3rem;
 }
@@ -60,13 +73,19 @@
   }
   .mainContent {
     grid-area: main;
-    width: 64.3rem;
+    width: 79vw;
+  }
+  .dealsContainer {
+    gap: 2.4rem;
+    margin-left: 3.2rem;
   }
   .pageTitle {
     font-size: 3.6rem;
+    margin-left: 3.2rem;
     width: 64.3rem;
   }
   .dealsSummary {
+    margin-left: 3.2rem;
     width: 64.3rem;
   }
   .footer {
