@@ -77,7 +77,11 @@ export default function Deals() {
             <div>
               <div className={styles.pageTitle}>Deals</div>
               <div className={styles.dealsSummary}>
-                <div>{dealsNumber} Deals</div>
+                {dealsNumber === 1 ? (
+                  <div>{dealsNumber} Deal</div>
+                ) : (
+                  <div>{dealsNumber} Deals</div>
+                )}
                 <div>
                   <EllipseIcon />
                 </div>
