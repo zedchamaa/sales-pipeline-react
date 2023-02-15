@@ -1,6 +1,7 @@
 import { useFirestore } from '../../hooks/useFirestore';
 import { useState, useEffect } from 'react';
 import { DealsContext } from '../../context/DealsContext';
+import { SearchContext } from '../../context/SearchContext';
 import { useContext } from 'react';
 
 // styles
@@ -19,6 +20,7 @@ import PaginationMenu from './PaginationMenu';
 export default function DealsList() {
   const { deleteDocument, updateDocument } = useFirestore('deals');
   const { filteredDeals } = useContext(DealsContext);
+  const { resetSearchTerm } = useContext(SearchContext);
 
   // pagination menu
   const [showPaginationMenu, setShowPaginationMenu] = useState(false);
@@ -77,6 +79,7 @@ export default function DealsList() {
   const handleCancel = () => {
     setShowEditDeal(false);
     setShowDealCard(true);
+    resetSearchTerm();
   };
 
   // reset all input fields
@@ -98,6 +101,8 @@ export default function DealsList() {
 
     resetInputFields();
 
+    resetSearchTerm();
+
     handleCancel();
   };
 
@@ -111,12 +116,14 @@ export default function DealsList() {
   // cancel the delete alert
   const handleCancelAlert = () => {
     setShowDeleteAlert(false);
+    resetSearchTerm();
   };
 
   // delete the deal on confirmation
   const handleDeleteDeal = (deal) => {
     deleteDocument(deal.id);
     setShowDeleteAlert(false);
+    resetSearchTerm();
   };
 
   const displayDeals = filteredDeals

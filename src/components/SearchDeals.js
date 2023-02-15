@@ -8,7 +8,7 @@ import styles from './SearchDeals.module.css';
 import SearchIcon from '../components/icons/SearchIcon';
 
 export default function SearchDeals() {
-  const { handleChangeSearchTerm } = useContext(SearchContext);
+  const { handleChangeSearchTerm, searchTerm } = useContext(SearchContext);
 
   return (
     <div className={styles.container}>
@@ -17,6 +17,7 @@ export default function SearchDeals() {
         type='text'
         placeholder='Search deals'
         onChange={handleChangeSearchTerm}
+        value={searchTerm}
       />
     </div>
   );

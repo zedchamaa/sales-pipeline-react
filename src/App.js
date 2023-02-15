@@ -30,8 +30,15 @@ function App() {
     setSearchTerm(e.target.value);
   };
 
+  // reset search term to null
+  const resetSearchTerm = () => {
+    setSearchTerm('');
+  };
+
   return (
-    <SearchContext.Provider value={{ searchTerm, handleChangeSearchTerm }}>
+    <SearchContext.Provider
+      value={{ searchTerm, handleChangeSearchTerm, resetSearchTerm }}
+    >
       <ModalContext.Provider
         value={{ showModal, handleShowModal, handleCloseModal }}
       >
