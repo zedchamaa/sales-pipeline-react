@@ -56,7 +56,9 @@
   font-weight: 600;
 }
 
-.card {
+.cardGood,
+.cardInProgress,
+.cardStalled {
   width: 25.4rem;
   height: 15.1rem;
   display: flex;
@@ -64,8 +66,19 @@
   padding: 1.2rem;
   gap: 1.2rem;
   background-color: var(--color-accent-white);
-  border-top: 3px solid var(--color-blue-gray-400);
   border-radius: 0.6rem;
+}
+
+.cardGood {
+  border-top: 3px solid var(--color-success-500);
+}
+
+.cardInProgress {
+  border-top: 3px solid var(--color-blue-gray-400);
+}
+
+.cardStalled {
+  border-top: 3px solid var(--color-accent-red);
 }
 
 .cardTop {

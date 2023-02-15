@@ -37,7 +37,13 @@ export default function DealsStage({ stageName }) {
     return (
       <div
         key={deal.id}
-        className={styles.card}
+        className={
+          deal.status === 'Very Good'
+            ? styles.cardGood
+            : deal.status === 'In Progress'
+            ? styles.cardInProgress
+            : styles.cardStalled
+        }
       >
         <div className={styles.cardTop}>
           <div className={styles.dealName}>{deal.name}</div>
@@ -46,7 +52,15 @@ export default function DealsStage({ stageName }) {
         </div>
         <div className={styles.cardBottom}>
           <div className={styles.dealValue}>${formatNumber(deal.amount)}</div>
-          <div className={styles.veryGood}>{deal.status}</div>
+          {deal.status === 'In Progress' && (
+            <div className={styles.inProgress}>{deal.status}</div>
+          )}
+          {deal.status === 'Very Good' && (
+            <div className={styles.veryGood}>{deal.status}</div>
+          )}
+          {deal.status === 'Stalled' && (
+            <div className={styles.stalled}>{deal.status}</div>
+          )}
         </div>
       </div>
     );
