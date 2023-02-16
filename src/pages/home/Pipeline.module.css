@@ -21,10 +21,14 @@
   margin-left: 1.6rem;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  width: auto;
+  width: 100%;
 }
 
 .dealsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollControl {
   display: none;
 }
 
@@ -47,6 +51,12 @@
   margin-left: 1.6rem;
   margin-top: 1.2rem;
   width: 34.3rem;
+}
+
+.dealsInfo {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
 }
 
 .footer {
@@ -86,8 +96,19 @@
     width: 64.3rem;
   }
   .dealsSummary {
+    display: flex;
+    justify-content: space-between;
     margin-left: 3.2rem;
-    width: 64.3rem;
+    width: 100%;
+  }
+  .scrollControl {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    height: 4.2rem;
+    margin-right: 3rem;
+    width: 9.4rem;
   }
   .footer {
     grid-area: footer;

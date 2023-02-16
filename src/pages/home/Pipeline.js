@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 import { DealsContext } from '../../context/DealsContext';
@@ -19,6 +19,8 @@ import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
 import DealsStage from './DealsStage';
 import EllipseIcon from '../../components/icons/EllipseIcon';
+import LeftArrowIcon from '../../components/icons/LeftArrowIcon';
+import RightArrowIcon from '../../components/icons/RightArrowIcon';
 
 export default function Pipeline() {
   let filteredDeals;
@@ -32,6 +34,7 @@ export default function Pipeline() {
   );
   const [dealsNumber, setDealsNumber] = useState(0);
   const [dealsValue, setDealsValue] = useState(0);
+  const dealsContainerRef = useRef(null);
 
   // filter the deals based on user search input
   if (documents) {
@@ -70,6 +73,24 @@ export default function Pipeline() {
     setShowModal(false);
   };
 
+  // scroll the deals container to the left
+  const handleScrollLeft = () => {
+    const container = dealsContainerRef.current;
+    container.scrollBy({
+      left: -500,
+      behavior: 'smooth',
+    });
+  };
+
+  // scroll the deals container to the right
+  const handleScrollRight = () => {
+    const container = dealsContainerRef.current;
+    container.scrollBy({
+      left: 500,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <DealsContext.Provider value={{ filteredDeals }}>
       <div className={styles.pageContainer}>
@@ -96,18 +117,28 @@ export default function Pipeline() {
             <div>
               <div className={styles.pageTitle}>Pipeline</div>
               <div className={styles.dealsSummary}>
-                {dealsNumber === 1 ? (
-                  <div>{dealsNumber} Deal</div>
-                ) : (
-                  <div>{dealsNumber} Deals</div>
-                )}
-                <div>
-                  <EllipseIcon />
+                <div className={styles.dealsInfo}>
+                  {dealsNumber === 1 ? (
+                    <div>{dealsNumber} Deal</div>
+                  ) : (
+                    <div>{dealsNumber} Deals</div>
+                  )}
+                  <div>
+                    <EllipseIcon />
+                  </div>
+                  <div>${formatNumber(dealsValue)}</div>
                 </div>
-                <div>${formatNumber(dealsValue)}</div>
+
+                <div className={styles.scrollControl}>
+                  <LeftArrowIcon onClick={handleScrollLeft} />
+                  <RightArrowIcon onClick={handleScrollRight} />
+                </div>
               </div>
               {error && <p>{error}</p>}
-              <div className={styles.dealsContainer}>
+              <div
+                className={styles.dealsContainer}
+                ref={dealsContainerRef}
+              >
                 <div> {documents && <DealsStage stageName='Qualified' />}</div>
                 <div> {documents && <DealsStage stageName='Demo' />}</div>
                 <div> {documents && <DealsStage stageName='Proposal' />}</div>
