@@ -11,6 +11,7 @@ import Pipeline from './pages/home/Pipeline';
 import Deals from './pages/deals/Deals';
 import DealsForm from './components/DealsForm';
 import Modal from './components/Modal';
+import ForgotPassword from './pages/forgot-password/ForgotPassword';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -63,6 +64,10 @@ function App() {
                 >
                   {!user && <Redirect to='/login' />}
                   {user && <Pipeline />}
+                </Route>
+                <Route path='/forgot-password'>
+                  {user && <Redirect to='/' />}
+                  {!user && <ForgotPassword />}
                 </Route>
                 <Route
                   exact

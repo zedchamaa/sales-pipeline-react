@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
+import { useHistory } from 'react-router-dom';
 
 // styles
 import styles from './Login.module.css';
@@ -12,11 +13,17 @@ import Footer from '../../components/Footer';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
   const { login, error, isPending } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, password);
+  };
+
+  // redirect users to forgot password page
+  const handleRedirect = () => {
+    history.push('/forgot-password');
   };
 
   return (
@@ -58,7 +65,7 @@ export default function Login() {
             </label>
           </div>
           <div className={styles.forgotPassword}>
-            <h3>Forgot password?</h3>
+            <span onClick={handleRedirect}>Forgot password?</span>
           </div>
           <div>
             {!isPending && <button className={styles.btn}>Login</button>}
