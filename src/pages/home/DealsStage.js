@@ -16,7 +16,9 @@ export default function DealsStage({ stageName }) {
   const [dealsNumber, setDealsNumber] = useState(0);
   const [dealsValue, setDealsValue] = useState(0);
 
-  const updatedDeals = filteredDeals.filter((deal) => deal.stage === stageName);
+  const updatedDeals = filteredDeals
+    .filter((deal) => deal.stage === stageName)
+    .sort((deal1, deal2) => deal2.amount - deal1.amount);
 
   useEffect(() => {
     if (updatedDeals) {
