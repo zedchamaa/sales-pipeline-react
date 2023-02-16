@@ -182,8 +182,8 @@ input {
 }
 
 .inProgress,
-.veryGood,
-.stalled {
+.success,
+.declined {
   align-items: center;
   border-radius: 12px;
   display: flex;
@@ -201,12 +201,12 @@ input {
   color: var(--color-gray-500);
 }
 
-.veryGood {
+.success {
   background-color: var(--color-success-100);
   color: var(--color-success-500);
 }
 
-.stalled {
+.declined {
   background-color: var(--color-error-100);
   color: var(--color-accent-red);
 }

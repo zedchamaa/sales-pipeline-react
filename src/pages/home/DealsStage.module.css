@@ -58,7 +58,7 @@
 
 .cardGood,
 .cardInProgress,
-.cardStalled {
+.cardDeclined {
   width: 25.4rem;
   height: 15.1rem;
   display: flex;
@@ -77,7 +77,7 @@
   border-top: 3px solid var(--color-blue-gray-400);
 }
 
-.cardStalled {
+.cardDeclined {
   border-top: 3px solid var(--color-accent-red);
 }
 
@@ -122,8 +122,8 @@
 }
 
 .inProgress,
-.veryGood,
-.stalled {
+.success,
+.declined {
   align-items: center;
   border-radius: 1.2rem;
   display: flex;
@@ -141,12 +141,12 @@
   color: var(--color-gray-500);
 }
 
-.veryGood {
+.success {
   background-color: var(--color-success-100);
   color: var(--color-success-500);
 }
 
-.stalled {
+.declined {
   background-color: var(--color-error-100);
   color: var(--color-accent-red);
 }
