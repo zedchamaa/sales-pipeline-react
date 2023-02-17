@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useResetPassword } from '../../hooks/useResetPassword';
+import { useHistory } from 'react-router-dom';
 
 // styles
 import styles from './ForgotPassword.module.css';
@@ -8,10 +10,29 @@ import Footer from '../../components/Footer';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [timerId, setTimerId] = useState('');
+  const history = useHistory();
+  const { resetPassword, error, isPending } = useResetPassword();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    resetPassword(email);
+    setMessage('Check your inbox for further instructions.');
+
+    setTimerId(
+      setTimeout(() => {
+        history.push('/login');
+      }, 3000)
+    );
   };
+
+  // clear timer when component unmounts
+  useEffect(() => {
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [timerId]);
 
   return (
     <>
@@ -20,7 +41,7 @@ export default function ForgotPassword() {
         className={styles.formContainer}
       >
         <div className={styles.topContainer}>
-          <h1>Forgot Password</h1>
+          <h1>Password Reset</h1>
           <p>
             If you're registered, we will email you a link to reset your
             password. Make sure to also check your spam folder for the email.
@@ -41,11 +62,24 @@ export default function ForgotPassword() {
             </label>
           </div>
           <div>
-            <button className={styles.btn}>Reset Password</button>
+            {!isPending && (
+              <button className={styles.btn}>Reset Password</button>
+            )}
+            {isPending && (
+              <button
+                className={styles.btn}
+                disabled
+              >
+                loading...
+              </button>
+            )}
           </div>
         </div>
         <div className={styles.bottomContainer}>
-          {/* {error && <div className='form-alert'>{error}</div>} */}
+          {error && <div className='form-alert'>{error}</div>}
+          {!error && message && (
+            <div className='form-alert-success'>{message}</div>
+          )}
         </div>
       </form>
       <Footer />

@@ -161,11 +161,9 @@ a:hover {
 
 /* Alerts */
 
-.form-alert {
+.form-alert,
+.form-alert-success {
   align-items: center;
-  background-color: var(--color-accent-alert);
-  border: 1px solid var(--color-accent-red);
-  color: var(--color-accent-red);
   display: flex;
   font-size: 1.5rem;
   font-weight: 500;
@@ -175,6 +173,18 @@ a:hover {
   margin-top: 0.5rem;
   padding: 2rem;
   width: 100%;
+}
+
+.form-alert {
+  background-color: var(--color-accent-alert);
+  border: 1px solid var(--color-accent-red);
+  color: var(--color-accent-red);
+}
+
+.form-alert-success {
+  background-color: var(--color-success-100);
+  border: 1px solid var(--color-success-500);
+  color: var(--color-success-500);
 }
 
 /* Logo */
