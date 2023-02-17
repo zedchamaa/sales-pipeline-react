@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
 import { useHistory } from 'react-router-dom';
 
+// libraries
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 // styles
 import styles from './Login.module.css';
 
@@ -28,6 +31,19 @@ export default function Login() {
 
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Sales Pipeline (Demo App) by ZED CHAMAA | Login</title>
+          <meta
+            name='description'
+            content='Login to the Sales Pipeline demo app to easily manage your sales pipeline.'
+          />
+          <meta
+            name='keywords'
+            content='sales pipeline, free sales pipeline app, manage sales pipeline'
+          />
+        </Helmet>
+      </HelmetProvider>
       <Announcement title={'Demo Login Details'}>
         <p>Email: dev@zedchamaa.com</p>
         <p>Password: demoapp</p>

@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSignup } from '../../hooks/useSignup';
 
+// libraries
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 // styles
 import styles from './Signup.module.css';
 
@@ -33,6 +36,19 @@ export default function Signup() {
 
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>Sales Pipeline (Demo App) by ZED CHAMAA | Register</title>
+          <meta
+            name='description'
+            content='Register your Sales Pipeline demo app account.'
+          />
+          <meta
+            name='keywords'
+            content='free sales process management app, free sales pipeline management app, sales pipeline app demo'
+          />
+        </Helmet>
+      </HelmetProvider>
       <form
         onSubmit={handleSubmit}
         className={styles.formContainer}

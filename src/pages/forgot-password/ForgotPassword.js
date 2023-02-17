@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useResetPassword } from '../../hooks/useResetPassword';
 import { useHistory } from 'react-router-dom';
 
+// libraries
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 // styles
 import styles from './ForgotPassword.module.css';
 
@@ -36,6 +39,21 @@ export default function ForgotPassword() {
 
   return (
     <>
+      <HelmetProvider>
+        <Helmet>
+          <title>
+            Sales Pipeline (Demo App) by ZED CHAMAA | Reset Password
+          </title>
+          <meta
+            name='description'
+            content='Reset your Sales Pipeline demo app account password.'
+          />
+          <meta
+            name='keywords'
+            content='reset password'
+          />
+        </Helmet>
+      </HelmetProvider>
       <form
         onSubmit={handleSubmit}
         className={styles.formContainer}

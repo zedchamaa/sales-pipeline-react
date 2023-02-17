@@ -4,6 +4,9 @@ import { useEffect, useState, useContext } from 'react';
 import { DealsContext } from '../../context/DealsContext';
 import { SearchContext } from '../../context/SearchContext';
 
+// libraries
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 // styles
 import styles from './Deals.module.css';
 
@@ -60,41 +63,58 @@ export default function Deals() {
   }, [filteredDeals]);
 
   return (
-    <DealsContext.Provider value={{ filteredDeals }}>
-      <div className={styles.pageContainer}>
-        <div className={styles.sidebar}>
-          <Sidebar />
-        </div>
-        <div>
-          <NavMenu />
-        </div>
-        <div className={styles.topbar}>
-          <Topbar />
-        </div>
-        {documents && (
-          <div className={styles.mainContent}>
-            <div>
-              <div className={styles.pageTitle}>Deals</div>
-              <div className={styles.dealsSummary}>
-                {dealsNumber === 1 ? (
-                  <div>{dealsNumber} Deal</div>
-                ) : (
-                  <div>{dealsNumber} Deals</div>
-                )}
-                <div>
-                  <EllipseIcon />
-                </div>
-                <div>${formatNumber(dealsValue)}</div>
-              </div>
-              {error && <p>{error}</p>}
-              {documents && <DealsList />}
-            </div>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>
+            Sales Pipeline (Demo App) by ZED CHAMAA | Deals Management
+          </title>
+          <meta
+            name='description'
+            content='Manage and update your sales deals easily and quickly.'
+          />
+          <meta
+            name='keywords'
+            content='manage sales deals, free sales pipeline app, free sales management app'
+          />
+        </Helmet>
+      </HelmetProvider>
+      <DealsContext.Provider value={{ filteredDeals }}>
+        <div className={styles.pageContainer}>
+          <div className={styles.sidebar}>
+            <Sidebar />
           </div>
-        )}
-        <div className={styles.footer}>
-          <Footer />
+          <div>
+            <NavMenu />
+          </div>
+          <div className={styles.topbar}>
+            <Topbar />
+          </div>
+          {documents && (
+            <div className={styles.mainContent}>
+              <div>
+                <div className={styles.pageTitle}>Deals</div>
+                <div className={styles.dealsSummary}>
+                  {dealsNumber === 1 ? (
+                    <div>{dealsNumber} Deal</div>
+                  ) : (
+                    <div>{dealsNumber} Deals</div>
+                  )}
+                  <div>
+                    <EllipseIcon />
+                  </div>
+                  <div>${formatNumber(dealsValue)}</div>
+                </div>
+                {error && <p>{error}</p>}
+                {documents && <DealsList />}
+              </div>
+            </div>
+          )}
+          <div className={styles.footer}>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </DealsContext.Provider>
+      </DealsContext.Provider>
+    </>
   );
 }
