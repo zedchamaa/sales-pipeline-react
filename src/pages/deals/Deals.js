@@ -74,7 +74,7 @@ export default function Deals() {
         {documents && (
           <div className={styles.mainContent}>
             <div>
-              <div className={styles.pageTitle}>Deals</div>
+              <div className={styles.pageTitle}>Deals (TEST)</div>
               <div className={styles.dealsSummary}>
                 {dealsNumber === 1 ? (
                   <div>{dealsNumber} Deal</div>
