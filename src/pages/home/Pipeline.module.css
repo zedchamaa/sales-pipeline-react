@@ -10,7 +10,7 @@
 
 .mainContent {
   margin: 1.6rem auto 0 0;
-  width: 100vw;
+  width: 95vw;
 }
 
 .dealsContainer {
@@ -21,6 +21,7 @@
   margin-left: 1.6rem;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  padding-right: 1.6rem;
   width: 100%;
 }
 

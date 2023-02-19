@@ -10,18 +10,17 @@
 .modal {
   background: var(--color-accent-white);
   border-radius: 1.2rem;
-  height: fit-content;
+  height: 100vh;
   left: 50%;
   padding: 3rem;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 34.3rem;
+  width: 100vw;
 }
 
 .modalContent {
-  height: 40rem;
-  max-width: 34.3rem;
+  height: fit-content;
   overflow-y: auto;
 }
 
@@ -43,10 +42,29 @@
   line-height: 2.1rem;
 }
 
-@media screen and (min-width: 415px) {
+@media screen and (min-width: 415px) and (min-height: 680px) {
   .modal {
     width: 50.3rem;
+    height: fit-content;
   }
+  .modalContent {
+    height: fit-content;
+    max-width: 50.3rem;
+  }
+}
+
+@media screen and (min-width: 415px) and (max-height: 680px) {
+  .modal {
+    width: 50.3rem;
+    height: fit-content;
+  }
+  .modalContent {
+    height: 50rem;
+    max-width: 50.3rem;
+  }
+}
+
+@media screen and (max-width: 415px) and (max-height: 680px) {
   .modalContent {
     height: 60rem;
     max-width: 50.3rem;
