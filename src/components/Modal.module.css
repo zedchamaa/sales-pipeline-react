@@ -20,7 +20,7 @@
 }
 
 .modalContent {
-  height: 60rem;
+  height: 40rem;
   max-width: 34.3rem;
   overflow-y: auto;
 }
@@ -48,6 +48,7 @@
     width: 50.3rem;
   }
   .modalContent {
+    height: 60rem;
     max-width: 50.3rem;
   }
 }
