@@ -42,6 +42,16 @@
   line-height: 2.1rem;
 }
 
+/* Smaller screens */
+
+@media screen and (max-width: 415px) and (max-height: 680px) {
+  .modalContent {
+    height: 50rem;
+  }
+}
+
+/* Larger Screens */
+
 @media screen and (min-width: 415px) and (min-height: 680px) {
   .modal {
     width: 50.3rem;
@@ -58,13 +68,6 @@
     width: 50.3rem;
     height: fit-content;
   }
-  .modalContent {
-    height: 50rem;
-    max-width: 50.3rem;
-  }
-}
-
-@media screen and (max-width: 415px) and (max-height: 680px) {
   .modalContent {
     height: 50rem;
     max-width: 50.3rem;
