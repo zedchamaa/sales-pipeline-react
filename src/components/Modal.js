@@ -8,15 +8,17 @@ export default function Modal({ children, onClick, title }) {
   return (
     <div className={styles.modalBackdrop}>
       <div className={styles.modal}>
-        <div className={styles.iconContainer}>
-          <div className={styles.title}>{title}</div>
-          <CloseIcon
-            onClick={onClick}
-            stroke={'black'}
-            strokeWidth={'4'}
-          />
+        <div className={styles.modalContent}>
+          <div className={styles.iconContainer}>
+            <div className={styles.title}>{title}</div>
+            <CloseIcon
+              onClick={onClick}
+              stroke={'black'}
+              strokeWidth={'4'}
+            />
+          </div>
+          {children}
         </div>
-        {children}
       </div>
     </div>
   );
