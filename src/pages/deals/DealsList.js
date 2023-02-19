@@ -31,6 +31,9 @@ export default function DealsList() {
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
+
+    // scroll to top of window when pagination page changes
+    window.scrollTo(0, 0);
   };
 
   // Only show the pagination menu when deals
