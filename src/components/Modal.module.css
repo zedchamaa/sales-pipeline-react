@@ -66,7 +66,7 @@
 
 @media screen and (max-width: 415px) and (max-height: 680px) {
   .modalContent {
-    height: 60rem;
+    height: 50rem;
     max-width: 50.3rem;
   }
 }
