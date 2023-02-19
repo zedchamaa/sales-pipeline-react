@@ -10,11 +10,14 @@ export default function StagesMenu({ onChange, stage }) {
     { value: 'Lost', label: 'Lost' },
   ];
 
+  const menuContainer = document.body; // or any other container with a max-width set
+
   return (
     <Select
       options={stages}
       onChange={onChange}
       placeholder={stage}
+      menuPortalTarget={menuContainer}
     />
   );
 }

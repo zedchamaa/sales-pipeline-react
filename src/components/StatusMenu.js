@@ -74,6 +74,14 @@ export default function StatusMenu({ onChange, status }) {
         lineHeight: data.lineHeight,
       };
     },
+    menuPortal: (base) => ({
+      ...base,
+      zIndex: 9999,
+    }),
+    menu: (base) => ({
+      ...base,
+      maxWidth: 300,
+    }),
   };
 
   return (
@@ -82,6 +90,7 @@ export default function StatusMenu({ onChange, status }) {
       onChange={onChange}
       styles={colorStyles}
       placeholder={status}
+      menuPortalTarget={document.body}
     />
   );
 }
