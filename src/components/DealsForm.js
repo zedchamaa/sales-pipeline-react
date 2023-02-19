@@ -62,6 +62,9 @@ export default function DealsForm({ uid }) {
 
     // hide the modal
     handleCloseModal();
+
+    // scroll to the top of the page
+    window.scrollTo(0, 0);
   };
 
   // reset the form fields
