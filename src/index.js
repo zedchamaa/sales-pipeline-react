@@ -16,6 +16,15 @@ ReactDOM.render(
             name='viewport'
             content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'
           />
+          <title>Sales Pipeline (Demo App) by ZED CHAMAA | Login</title>
+          <meta
+            name='description'
+            content='Login to the Sales Pipeline demo app to easily manage your sales pipeline.'
+          />
+          <meta
+            name='keywords'
+            content='sales pipeline, free sales pipeline app, manage sales pipeline'
+          />
         </Helmet>
       </HelmetProvider>
       <App />
