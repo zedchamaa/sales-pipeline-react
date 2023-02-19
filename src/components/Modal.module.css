@@ -43,8 +43,6 @@
   line-height: 2.1rem;
 }
 
-/* TEST */
-
 @media screen and (min-width: 415px) {
   .modal {
     width: 50.3rem;
