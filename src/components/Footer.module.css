@@ -1,14 +1,14 @@
 footer {
   align-items: center;
   background-color: var(--color-gray-200);
+  bottom: 0;
   display: flex;
   gap: 10px;
   height: 3.9rem;
   justify-content: center;
   left: 0;
   padding: 1.2rem 2.4rem;
-  position: sticky;
-  top: 100%;
+  position: fixed;
   width: 100%;
 }
 
