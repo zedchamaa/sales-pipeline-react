@@ -50,6 +50,13 @@ export default function DealsForm({ uid }) {
       return;
     }
 
+    // format the date to the british locale (e.g. 19 February 2023)
+    const createdDate = new Date().toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+
     addDocument({
       uid,
       name,
@@ -57,7 +64,7 @@ export default function DealsForm({ uid }) {
       amount: Number(amount),
       stage,
       status,
-      created: new Date().toLocaleDateString(),
+      created: createdDate,
     });
 
     // hide the modal
