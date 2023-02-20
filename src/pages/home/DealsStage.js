@@ -54,18 +54,6 @@ export default function DealsStage({ stageName }) {
               (deal.stage !== 'Won' || deal.stage !== 'Lost')
             ? styles.cardDeclined
             : ''
-
-          // deal.status === 'Good' && deal.stage !== 'Won'
-          //   ? styles.cardGood
-          //   : deal.stage === 'Won'
-          //   ? styles.cardGood
-          //   : deal.status === 'Stalled' && deal.stage !== 'Lost'
-          //   ? styles.cardDeclined
-          //   : deal.status === 'Good' && deal.stage === 'Lost'
-          //   ? styles.cardDeclined
-          //   : deal.status === 'In Progress'
-          //   ? styles.cardInProgress
-          //   : ''
         }
       >
         <div className={styles.cardTop}>
