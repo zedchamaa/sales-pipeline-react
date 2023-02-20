@@ -235,6 +235,16 @@ input {
   justify-content: center;
 }
 
+.tip {
+  background-color: var(--color-accent-yellow);
+  border-radius: 8px;
+  color: var(--color-accent-white);
+  height: fit-content;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
 @media screen and (min-width: 415px) {
   .container {
     margin-top: 2.4rem;

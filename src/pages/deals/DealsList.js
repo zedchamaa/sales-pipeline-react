@@ -242,94 +242,102 @@ export default function DealsList() {
             </div>
           )}
           {showEditDeal && selectedDeal === deal && (
-            <div className={styles.card}>
-              <div className={styles.cardTop}>
-                <div className={styles.titles}>
-                  <div className={styles.dealName}>
-                    <input
-                      type='text'
-                      onChange={(e) => setDealName(e.target.value)}
-                      onKeyDown={handleDealKeyDown}
-                      placeholder={deal.name}
-                    />
-                  </div>
-                  <div className={styles.clientName}>
-                    <input
-                      type='text'
-                      onChange={(e) => setClientName(e.target.value)}
-                      onKeyDown={handleClientKeyDown}
-                      placeholder={deal.client}
-                    />
-                  </div>
-                </div>
-                <div className={styles.buttonsContainer}>
-                  <button
-                    className={styles.cancelBtn}
-                    onClick={handleCancel}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className={styles.saveBtn}
-                    onClick={() => saveDeal(deal)}
-                  >
-                    Save
-                  </button>
-                </div>
+            <>
+              <div className={styles.tip}>
+                <span>
+                  Overwrite the form's input values and click the Save button to
+                  update.
+                </span>
               </div>
-              <div className={styles.cardBottom}>
-                <div className={styles.blockA}>
-                  <div className={styles.content}>
-                    <div className={styles.colOne}>
-                      <span className={styles.dealInfo}>Deal Value</span>
+              <div className={styles.card}>
+                <div className={styles.cardTop}>
+                  <div className={styles.titles}>
+                    <div className={styles.dealName}>
+                      <input
+                        type='text'
+                        onChange={(e) => setDealName(e.target.value)}
+                        onKeyDown={handleDealKeyDown}
+                        placeholder={deal.name}
+                      />
                     </div>
-                    <div className={styles.colTwoEdit}>
-                      <span className={styles.dealValue}>
-                        <input
-                          type='number'
-                          onChange={(e) => setDealAmount(e.target.value)}
-                          placeholder={deal.amount}
+                    <div className={styles.clientName}>
+                      <input
+                        type='text'
+                        onChange={(e) => setClientName(e.target.value)}
+                        onKeyDown={handleClientKeyDown}
+                        placeholder={deal.client}
+                      />
+                    </div>
+                  </div>
+                  <div className={styles.buttonsContainer}>
+                    <button
+                      className={styles.cancelBtn}
+                      onClick={handleCancel}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className={styles.saveBtn}
+                      onClick={() => saveDeal(deal)}
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.cardBottom}>
+                  <div className={styles.blockA}>
+                    <div className={styles.content}>
+                      <div className={styles.colOne}>
+                        <span className={styles.dealInfo}>Deal Value</span>
+                      </div>
+                      <div className={styles.colTwoEdit}>
+                        <span className={styles.dealValue}>
+                          <input
+                            type='number'
+                            onChange={(e) => setDealAmount(e.target.value)}
+                            placeholder={deal.amount}
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div className={styles.content}>
+                      <div className={styles.colOne}>
+                        <span className={styles.dealInfo}>Deal Status</span>
+                      </div>
+                      <div className={styles.colTwoEdit}>
+                        <StatusMenu
+                          status={deal.status}
+                          onChange={handleStatusChange}
                         />
-                      </span>
+                      </div>
                     </div>
                   </div>
-                  <div className={styles.content}>
-                    <div className={styles.colOne}>
-                      <span className={styles.dealInfo}>Deal Status</span>
+                  <div className={styles.blockB}>
+                    <div className={styles.content}>
+                      <div className={styles.colOne}>
+                        <span className={styles.dealInfo}>Deal Stage</span>
+                      </div>
+                      <div className={styles.colTwoEdit}>
+                        <StagesMenu
+                          stage={deal.stage}
+                          onChange={handleStageChange}
+                        />
+                      </div>
                     </div>
-                    <div className={styles.colTwoEdit}>
-                      <StatusMenu
-                        status={deal.status}
-                        onChange={handleStatusChange}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.blockB}>
-                  <div className={styles.content}>
-                    <div className={styles.colOne}>
-                      <span className={styles.dealInfo}>Deal Stage</span>
-                    </div>
-                    <div className={styles.colTwoEdit}>
-                      <StagesMenu
-                        stage={deal.stage}
-                        onChange={handleStageChange}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.content}>
-                    <div className={styles.colOne}>
-                      <span className={styles.dealInfo}>Date Created</span>
-                    </div>
-                    <div className={styles.colTwoEdit}>
-                      <span className={styles.dealCreatedDate}>
-                        {deal.created}
-                      </span>
+                    <div className={styles.content}>
+                      <div className={styles.colOne}>
+                        <span className={styles.dealInfo}>Date Created</span>
+                      </div>
+                      <div className={styles.colTwoEdit}>
+                        <span className={styles.dealCreatedDate}>
+                          {deal.created}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       );
