@@ -18,6 +18,7 @@ import StatusMenu from '../../components/StatusMenu';
 import PaginationMenu from './PaginationMenu';
 
 export default function DealsList() {
+  const [keyDown, setKeyDown] = useState('');
   const { deleteDocument, updateDocument } = useFirestore('deals');
   const { filteredDeals } = useContext(DealsContext);
   const { resetSearchTerm } = useContext(SearchContext);
@@ -95,8 +96,10 @@ export default function DealsList() {
   };
 
   const saveDeal = (deal) => {
-    if (dealName !== '') updateDocument(deal.id, { name: dealName });
-    if (clientName !== '') updateDocument(deal.id, { client: clientName });
+    if (dealName !== '' && keyDown !== 'Space' && keyDown !== 'Backspace')
+      updateDocument(deal.id, { name: dealName });
+    if (clientName !== '' && keyDown !== 'Space' && keyDown !== 'Backspace')
+      updateDocument(deal.id, { client: clientName });
     if (dealAmount !== '')
       updateDocument(deal.id, { amount: Number(dealAmount) });
     if (dealStatus !== '') updateDocument(deal.id, { status: dealStatus });
@@ -127,6 +130,18 @@ export default function DealsList() {
     deleteDocument(deal.id);
     setShowDeleteAlert(false);
     resetSearchTerm();
+  };
+
+  // prevent user from overwriting the deal name
+  // if deal name is empty and user clicks on the space bar or backspace
+  const handleDealKeyDown = (e) => {
+    setKeyDown(e.code);
+  };
+
+  // prevent user from overwriting the client name
+  // if deal name is empty and user clicks on the space bar or backspace
+  const handleClientKeyDown = (e) => {
+    setKeyDown(e.code);
   };
 
   const displayDeals = filteredDeals
@@ -234,6 +249,7 @@ export default function DealsList() {
                     <input
                       type='text'
                       onChange={(e) => setDealName(e.target.value)}
+                      onKeyDown={handleDealKeyDown}
                       placeholder={deal.name}
                     />
                   </div>
@@ -241,6 +257,7 @@ export default function DealsList() {
                     <input
                       type='text'
                       onChange={(e) => setClientName(e.target.value)}
+                      onKeyDown={handleClientKeyDown}
                       placeholder={deal.client}
                     />
                   </div>
