@@ -40,17 +40,32 @@ export default function DealsStage({ stageName }) {
       <div
         key={deal.id}
         className={
-          deal.status === 'Good' && deal.stage !== 'Won'
+          deal.stage === 'Won'
             ? styles.cardGood
-            : deal.stage === 'Won'
-            ? styles.cardGood
-            : deal.status === 'Stalled' && deal.stage !== 'Lost'
-            ? styles.cardDeclined
             : deal.stage === 'Lost'
             ? styles.cardDeclined
-            : deal.status === 'In Progress'
+            : deal.status === 'In Progress' &&
+              (deal.stage !== 'Won' || deal.stage !== 'Lost')
             ? styles.cardInProgress
+            : deal.status === 'Good' &&
+              (deal.stage !== 'Won' || deal.stage !== 'Lost')
+            ? styles.cardGood
+            : deal.status === 'Stalled' &&
+              (deal.stage !== 'Won' || deal.stage !== 'Lost')
+            ? styles.cardDeclined
             : ''
+
+          // deal.status === 'Good' && deal.stage !== 'Won'
+          //   ? styles.cardGood
+          //   : deal.stage === 'Won'
+          //   ? styles.cardGood
+          //   : deal.status === 'Stalled' && deal.stage !== 'Lost'
+          //   ? styles.cardDeclined
+          //   : deal.status === 'Good' && deal.stage === 'Lost'
+          //   ? styles.cardDeclined
+          //   : deal.status === 'In Progress'
+          //   ? styles.cardInProgress
+          //   : ''
         }
       >
         <div className={styles.cardTop}>
