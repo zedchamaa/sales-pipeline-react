@@ -17,12 +17,7 @@ export default function Sidebar() {
       <div className={styles.menuItems}>
         <div className={styles.linkContainer}>
           <PipelineIcon />
-          <NavLink
-            exact
-            to='/'
-          >
-            Pipeline
-          </NavLink>
+          <NavLink to='/'>Pipeline</NavLink>
         </div>
         <div className={styles.linkContainer}>
           <DealsIcon />

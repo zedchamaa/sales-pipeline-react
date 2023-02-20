@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 import { ModalContext } from './context/ModalContext';
 import { SearchContext } from './context/SearchContext';
@@ -57,34 +57,34 @@ function App() {
           )}
           {authIsReady && (
             <BrowserRouter>
-              <Switch>
+              <Routes>
                 <Route
-                  exact
                   path='/'
-                >
-                  {!user && <Redirect to='/login' />}
-                  {user && <Pipeline />}
-                </Route>
-                <Route path='/forgot-password'>
-                  {user && <Redirect to='/' />}
-                  {!user && <ForgotPassword />}
-                </Route>
+                  element={user ? <Pipeline /> : <Navigate to='/login' />}
+                />
                 <Route
-                  exact
+                  path='/forgot-password'
+                  element={user ? <Navigate to='/' /> : <ForgotPassword />}
+                />
+                <Route
                   path='/deals'
-                >
-                  {!user && <Redirect to='/login' />}
-                  {user && <Deals />}
-                </Route>
-                <Route path='/login'>
-                  {user && <Redirect to='/' />}
-                  {!user && <Login />}
-                </Route>
-                <Route path='/signup'>
-                  {user && user.displayName && <Redirect to='/' />}
-                  {!user && <Signup />}
-                </Route>
-              </Switch>
+                  element={user ? <Deals /> : <Navigate to='/login' />}
+                />
+                <Route
+                  path='/*'
+                  element={user ? <Pipeline /> : <Navigate to='/login' />}
+                />
+                <Route
+                  path='/login'
+                  element={user ? <Navigate to='/' /> : <Login />}
+                />
+                <Route
+                  path='/signup'
+                  element={
+                    user && user.displayName ? <Navigate to='/' /> : <Signup />
+                  }
+                />
+              </Routes>
             </BrowserRouter>
           )}
         </div>

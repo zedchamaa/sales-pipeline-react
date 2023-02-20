@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useResetPassword } from '../../hooks/useResetPassword';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // libraries
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -15,7 +15,7 @@ export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [timerId, setTimerId] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
   const { resetPassword, error, isPending } = useResetPassword();
 
   const handleSubmit = (e) => {
@@ -25,7 +25,7 @@ export default function ForgotPassword() {
 
     setTimerId(
       setTimeout(() => {
-        history.push('/login');
+        navigate('/login');
       }, 3000)
     );
   };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // libraries
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -16,7 +16,7 @@ import Footer from '../../components/Footer';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
   const { login, error, isPending } = useLogin();
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ export default function Login() {
 
   // redirect users to forgot password page
   const handleRedirect = () => {
-    history.push('/forgot-password');
+    navigate('/forgot-password');
   };
 
   return (
