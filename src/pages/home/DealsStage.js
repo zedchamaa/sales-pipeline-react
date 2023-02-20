@@ -40,11 +40,17 @@ export default function DealsStage({ stageName }) {
       <div
         key={deal.id}
         className={
-          deal.status === 'Success'
+          deal.status === 'Good' && deal.stage !== 'Won'
             ? styles.cardGood
+            : deal.stage === 'Won'
+            ? styles.cardGood
+            : deal.status === 'Stalled' && deal.stage !== 'Lost'
+            ? styles.cardDeclined
+            : deal.stage === 'Lost'
+            ? styles.cardDeclined
             : deal.status === 'In Progress'
             ? styles.cardInProgress
-            : styles.cardDeclined
+            : ''
         }
       >
         <div className={styles.cardTop}>
@@ -54,15 +60,32 @@ export default function DealsStage({ stageName }) {
         </div>
         <div className={styles.cardBottom}>
           <div className={styles.dealValue}>${formatNumber(deal.amount)}</div>
-          {deal.status === 'In Progress' && (
-            <div className={styles.inProgress}>{deal.status}</div>
+
+          {deal.stage === 'Won' && (
+            <div className={styles.success}>{'Success'}</div>
           )}
-          {deal.status === 'Success' && (
-            <div className={styles.success}>{deal.status}</div>
+
+          {deal.stage === 'Lost' && (
+            <div className={styles.declined}>{'Declined'}</div>
           )}
-          {deal.status === 'Declined' && (
-            <div className={styles.declined}>{deal.status}</div>
-          )}
+
+          {deal.status === 'Good' &&
+            deal.stage !== 'Won' &&
+            deal.stage !== 'Lost' && (
+              <div className={styles.success}>{deal.status}</div>
+            )}
+
+          {deal.status === 'In Progress' &&
+            deal.stage !== 'Won' &&
+            deal.stage !== 'Lost' && (
+              <div className={styles.inProgress}>{deal.status}</div>
+            )}
+
+          {deal.status === 'Stalled' &&
+            deal.stage !== 'Won' &&
+            deal.stage !== 'Lost' && (
+              <div className={styles.declined}>{deal.status}</div>
+            )}
         </div>
       </div>
     );

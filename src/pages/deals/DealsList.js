@@ -194,8 +194,8 @@ export default function DealsList() {
                           (deal.status === 'In Progress'
                             ? styles.inProgress
                             : '') ||
-                          (deal.status === 'Success' ? styles.success : '') ||
-                          (deal.status === 'Declined' ? styles.declined : '')
+                          (deal.status === 'Good' ? styles.success : '') ||
+                          (deal.status === 'Stalled' ? styles.declined : '')
                         }
                       >
                         {deal.status}

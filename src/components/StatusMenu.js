@@ -18,8 +18,8 @@ export default function StatusMenu({ onChange, status }) {
       lineHeight: '14.52px',
     },
     {
-      value: 'Success',
-      label: 'Success',
+      value: 'Good',
+      label: 'Good',
       color: '#12B76A',
       backgroundColor: '#D1FADF',
       width: '153px',
@@ -33,8 +33,8 @@ export default function StatusMenu({ onChange, status }) {
       lineHeight: '14.52px',
     },
     {
-      value: 'Declined',
-      label: 'Declined',
+      value: 'Stalled',
+      label: 'Stalled',
       color: '#F04438',
       backgroundColor: '#FEE4E2',
       width: '153px',
