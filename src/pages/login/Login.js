@@ -9,6 +9,10 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 // styles
 import styles from './Login.module.css';
 
+// images
+import mockup from '../../assets/images/mockup.png';
+import toolbar from '../../assets/images/browser-toolbar.png';
+
 // pages & components
 import Footer from '../../components/Footer';
 import Logo from '../../components/Logo';
@@ -134,7 +138,30 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <div className={styles.rightContainer}>Right Container</div>
+        <div className={styles.rightContainer}>
+          <div className={styles.rightContent}>
+            <div className={styles.title}>
+              Streamline your sales process and close more deals
+            </div>
+            <div className={styles.description}>
+              Intuitive and easy-to-use sales pipeline software. Track your
+              leads, identify your best opportunities, and move them through
+              your pipeline with ease.
+            </div>
+            <div className={styles.toolbar}>
+              <img
+                src={toolbar}
+                alt='toolbar'
+              />
+            </div>
+            <div className={styles.mockup}>
+              <img
+                src={mockup}
+                alt='mockup'
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
