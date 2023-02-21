@@ -19,6 +19,8 @@ export default function DealsForm({ uid }) {
   const [stage, setStage] = useState('');
   const [status, setStatus] = useState('');
   const [alert, setAlert] = useState('');
+  const [dealKeyDown, setDealKeyDown] = useState('');
+  const [clientKeyDown, setClientKeyDown] = useState('');
 
   // stage drop down menu
   const handleStageChange = (selectedOption) => {
@@ -57,15 +59,30 @@ export default function DealsForm({ uid }) {
       year: 'numeric',
     });
 
-    addDocument({
-      uid,
-      name,
-      client,
-      amount: Number(amount),
-      stage,
-      status,
-      created: createdDate,
-    });
+    // check if user is submitting blank values for deal name and client name
+    if (
+      name !== '' &&
+      dealKeyDown !== 'Space' &&
+      dealKeyDown !== 'Backspace' &&
+      client !== '' &&
+      clientKeyDown !== 'Space' &&
+      clientKeyDown !== 'Backspace'
+    ) {
+      addDocument({
+        uid,
+        name,
+        client,
+        amount: Number(amount),
+        stage,
+        status,
+        created: createdDate,
+      });
+    } else {
+      setName('');
+      setClient('');
+      setAlert('Deal name and client name cannot be blank');
+      return;
+    }
 
     // hide the modal
     handleCloseModal();
@@ -81,6 +98,16 @@ export default function DealsForm({ uid }) {
     }
   }, [response.success]);
 
+  // prevent user from submitting the form if deal name is blank
+  const handleDealKeyDown = (e) => {
+    setDealKeyDown(e.code);
+  };
+
+  // prevent user from submitting the form if client name is blank
+  const handleClientKeyDown = (e) => {
+    setClientKeyDown(e.code);
+  };
+
   return (
     <div className={styles.formContainer}>
       <form onSubmit={handleSubmit}>
@@ -89,6 +116,7 @@ export default function DealsForm({ uid }) {
           <input
             type='text'
             onChange={(e) => setName(e.target.value)}
+            onKeyDown={handleDealKeyDown}
             value={name}
             placeholder='e.g. ABC Company Web App'
             required
@@ -99,6 +127,7 @@ export default function DealsForm({ uid }) {
           <input
             type='text'
             onChange={(e) => setClient(e.target.value)}
+            onKeyDown={handleClientKeyDown}
             value={client}
             placeholder='e.g. ABC Company'
             required

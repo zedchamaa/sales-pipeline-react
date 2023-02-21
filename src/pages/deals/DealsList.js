@@ -139,7 +139,7 @@ export default function DealsList() {
   };
 
   // prevent user from overwriting the client name
-  // if deal name is empty and user clicks on the space bar or backspace
+  // if client name is empty and user clicks on the space bar or backspace
   const handleClientKeyDown = (e) => {
     setKeyDown(e.code);
   };
