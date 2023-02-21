@@ -14,7 +14,6 @@ import toolbar from '../../assets/images/browser-toolbar.png';
 
 // pages & components
 import Logo from '../../components/Logo';
-import Footer from '../../components/Footer';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -38,6 +37,9 @@ export default function Signup() {
 
     signup(email, password, displayName);
   };
+
+  // automatically update the footer copyright date
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -144,6 +146,16 @@ export default function Signup() {
                 </div>
               </form>
             </div>
+            <div className={styles.copyright}>
+              Copyright &copy; {currentYear}
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://zedchamaa.com'
+              >
+                zedchamaa
+              </a>
+            </div>
           </div>
         </div>
         <div className={styles.rightContainer}>
@@ -171,8 +183,6 @@ export default function Signup() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

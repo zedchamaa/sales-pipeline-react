@@ -17,7 +17,6 @@ import toolbar from '../../assets/images/browser-toolbar.png';
 import Logo from '../../components/Logo';
 import MailIcon from '../../components/icons/MailIcon';
 import LockIcon from '../../components/icons/LockIcon';
-import Footer from '../../components/Footer';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -34,6 +33,9 @@ export default function Login() {
   const handleRedirect = () => {
     navigate('/forgot-password');
   };
+
+  // automatically update the footer copyright date
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -136,6 +138,16 @@ export default function Login() {
                 </div>
               </form>
             </div>
+            <div className={styles.copyright}>
+              Copyright &copy; {currentYear}
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://zedchamaa.com'
+              >
+                zedchamaa
+              </a>
+            </div>
           </div>
         </div>
         <div className={styles.rightContainer}>
@@ -163,7 +175,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
