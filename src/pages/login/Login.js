@@ -14,10 +14,10 @@ import mockup from '../../assets/images/mockup.png';
 import toolbar from '../../assets/images/browser-toolbar.png';
 
 // pages & components
-import Footer from '../../components/Footer';
 import Logo from '../../components/Logo';
 import MailIcon from '../../components/icons/MailIcon';
 import LockIcon from '../../components/icons/LockIcon';
+import Footer from '../../components/Footer';
 
 export default function Login() {
   const [email, setEmail] = useState('');

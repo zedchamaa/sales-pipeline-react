@@ -1,6 +1,6 @@
 .logo {
   height: 7.5rem;
-  margin-top: 10rem;
+  margin-top: 5rem;
   padding: 1.6rem;
   width: 20.1rem;
 }
@@ -51,7 +51,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.4rem;
   height: 6.4rem;
   margin-bottom: 1rem;
   padding: 0px;
@@ -165,6 +165,9 @@
 }
 
 @media screen and (min-width: 1025px) {
+  .logo {
+    margin-top: 3rem;
+  }
   .formContainer {
     height: 57.7rem;
     width: 48rem;
@@ -181,6 +184,7 @@
     width: 43.2rem;
   }
   .middleContainer {
+    height: 40.8rem;
     width: 43.2rem;
   }
   .labels {
