@@ -209,3 +209,11 @@ a:hover {
 .logo-login {
   color: var(--color-blue-gray-600);
 }
+
+.logo a {
+  color: var(--color-blue-gray-25);
+}
+
+.logo-login a {
+  color: var(--color-blue-gray-600);
+}
