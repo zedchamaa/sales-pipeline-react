@@ -187,11 +187,11 @@ a:hover {
   color: var(--color-success-500);
 }
 
-/* Logo */
+/* Logos */
 
-.logo {
+.logo,
+.logo-login {
   align-items: center;
-  color: var(--color-blue-gray-25);
   display: flex;
   font-family: 'Manrope', sans-serif;
   font-size: 1.6rem;
@@ -200,4 +200,12 @@ a:hover {
   height: 4.3rem;
   line-height: 2.8rem;
   width: fit-content;
+}
+
+.logo {
+  color: var(--color-blue-gray-25);
+}
+
+.logo-login {
+  color: var(--color-blue-gray-600);
 }

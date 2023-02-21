@@ -10,8 +10,10 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import styles from './Login.module.css';
 
 // pages & components
-import Announcement from '../../components/Announcement';
 import Footer from '../../components/Footer';
+import Logo from '../../components/Logo';
+import MailIcon from '../../components/icons/MailIcon';
+import LockIcon from '../../components/icons/LockIcon';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -44,68 +46,96 @@ export default function Login() {
           />
         </Helmet>
       </HelmetProvider>
-      <Announcement title={'Demo Login Details'}>
-        <p>Email: dev@zedchamaa.com</p>
-        <p>Password: demoapp</p>
-      </Announcement>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.formContainer}
-      >
-        <div className={styles.topContainer}>
-          <h1>Login to your account</h1>
-          <p>Welcome! Please enter your details.</p>
-        </div>
-
-        <div className={styles.middleContainer}>
-          <div className={styles.labels}>
-            <label>
-              <span>Email</span>
-              <input
-                type='email'
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                placeholder='example@email.com'
-                required
+      <div className={styles.pageContainer}>
+        <div className={styles.leftContainer}>
+          <div className={styles.leftContent}>
+            <div className={styles.logo}>
+              <Logo
+                className={'logo-login'}
+                fillColor='#3e4784'
               />
-            </label>
-            <label>
-              <span>Password</span>
-              <input
-                type='password'
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-                placeholder='Enter password'
-                required
-              />
-            </label>
-          </div>
-          <div className={styles.forgotPassword}>
-            <span onClick={handleRedirect}>Forgot password?</span>
-          </div>
-          <div>
-            {!isPending && <button className={styles.btn}>Login</button>}
-            {isPending && (
-              <button
-                className={styles.btn}
-                disabled
+            </div>
+            <div className={styles.form}>
+              <form
+                onSubmit={handleSubmit}
+                className={styles.formContainer}
               >
-                loading...
-              </button>
-            )}
+                <div className={styles.topContainer}>
+                  <h1>Login to your account</h1>
+                  <p>Welcome! Please enter your login details.</p>
+                </div>
+                <div className={styles.demoCredentials}>
+                  <div className={styles.demoNote}>Demo Login Details:</div>
+                  <div className={styles.demoDetails}>
+                    <div className={styles.username}>
+                      <div>
+                        <MailIcon />
+                      </div>
+                      <div>dev@zedchamaa.com</div>
+                    </div>
+                    <div className={styles.password}>
+                      <div>
+                        <LockIcon />
+                      </div>
+                      <div>demoapp</div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.middleContainer}>
+                  <div className={styles.labels}>
+                    <label>
+                      <span>Email</span>
+                      <input
+                        type='email'
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        placeholder='example@email.com'
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Password</span>
+                      <input
+                        type='password'
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                        placeholder='Enter password'
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className={styles.forgotPassword}>
+                    <span onClick={handleRedirect}>Forgot password?</span>
+                  </div>
+                  <div>
+                    {!isPending && (
+                      <button className={styles.btn}>Login</button>
+                    )}
+                    {isPending && (
+                      <button
+                        className={styles.btn}
+                        disabled
+                      >
+                        loading...
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <div className={styles.bottomContainer}>
+                  <p>
+                    Don't have an account?{' '}
+                    <Link to='/signup'>
+                      <strong>Sign Up</strong>
+                    </Link>
+                  </p>
+                  {error && <div className='form-alert'>{error}</div>}
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-
-        <div className={styles.bottomContainer}>
-          <p>
-            Don't have an account?{' '}
-            <Link to='/signup'>
-              <strong>Sign Up</strong>
-            </Link>
-          </p>
-          {error && <div className='form-alert'>{error}</div>}
-        </div>
-      </form>
+        <div className={styles.rightContainer}>Right Container</div>
+      </div>
       <Footer />
     </>
   );

@@ -1,10 +1,10 @@
 // pages & components
 import LogoIcon from './icons/LogoIcon';
 
-export default function Logo() {
+export default function Logo({ className, fillColor }) {
   return (
-    <div className='logo'>
-      <LogoIcon />
+    <div className={className}>
+      <LogoIcon fillColor={fillColor} />
       SALES PIPELINE
     </div>
   );

@@ -12,7 +12,10 @@ export default function Sidebar() {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
-        <Logo />
+        <Logo
+          className={'logo'}
+          fillColor='#FCFCFD'
+        />
       </div>
       <div className={styles.menuItems}>
         <div className={styles.linkContainer}>

@@ -37,7 +37,10 @@ export default function NavMenu() {
       <div>
         {showHamburgerMenu && (
           <div className={styles.container}>
-            <Logo />
+            <Logo
+              className={'logo'}
+              fillColor='#FCFCFD'
+            />
             <HamburgerMenu onClick={handleMenuOpen} />
           </div>
         )}
@@ -45,7 +48,10 @@ export default function NavMenu() {
       {openMobileMenu && (
         <div className={styles.openedMenu}>
           <div className={styles.topMenu}>
-            <Logo />
+            <Logo
+              className={'logo'}
+              fillColor='#FCFCFD'
+            />
             <CloseIcon
               onClick={handleMenuClose}
               stroke={'white'}

@@ -1,3 +1,32 @@
+.logo {
+  width: 20.1rem;
+  height: 7.5rem;
+  padding: 1.6rem;
+}
+
+.leftContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.rightContainer {
+  display: none;
+}
+
+.leftContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.1rem;
+  height: 100%;
+  justify-content: center;
+  padding: 0 4.8rem;
+}
+
 .formContainer {
   align-items: center;
   background-color: var(--color-accent-white);
@@ -7,11 +36,11 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  height: 50.4rem;
+  height: 60.4rem;
   justify-content: center;
   left: 50%;
   padding: 4.8rem 1.6rem;
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 34.3rem;
@@ -23,8 +52,36 @@
   flex-direction: column;
   gap: 2.4rem;
   height: 6.4rem;
+  margin-bottom: 1rem;
   padding: 0px;
   width: 31.1rem;
+}
+
+.demoNote {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.demoDetails {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.demoCredentials {
+  background-color: var(--color-blue-gray-50);
+  border-radius: 0.8rem;
+  color: var(--color-blue-gray-500);
+  font-size: 1.4rem;
+  font-weight: 400;
+  height: 7.8rem;
+  line-height: 1.694rem;
+  padding: 1.6rem 1.2rem;
+  width: 31.1rem;
+}
+.username,
+.password {
+  display: flex;
+  gap: 0.4rem;
 }
 
 .middleContainer {
@@ -106,28 +163,58 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 415px) {
   .formContainer {
-    height: 56.2rem;
-    width: 45.8rem;
+    height: 57.7rem;
+    width: 48rem;
   }
   .topContainer {
-    height: 7.4rem;
-    width: 39.4rem;
+    width: 43.2rem;
+  }
+  .demoCredentials {
+    display: flex;
+    font-weight: 500;
+    gap: 1.2rem;
+    height: 4.9rem;
+    justify-content: center;
+    width: 43.2rem;
   }
   .middleContainer {
-    width: 39.4rem;
+    width: 43.2rem;
   }
   .labels {
-    width: 39.4rem;
+    width: 100%;
   }
   .formContainer input {
-    width: 39.4rem;
+    width: 100%;
   }
   .btn {
-    width: 39.4rem;
+    width: 43.2rem;
   }
   .forgotPassword span {
     font-size: 1.4rem;
+  }
+  .pageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'leftContainer rightContainer';
+    height: 100vh;
+  }
+  .leftContainer {
+    grid-area: leftContainer;
+  }
+  .rightContainer {
+    display: block;
+    grid-area: rightContainer;
+    border: 5px solid green;
+  }
+  .leftContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+    height: 100%;
+    justify-content: center;
+    padding: 0 4.8rem;
   }
 }
