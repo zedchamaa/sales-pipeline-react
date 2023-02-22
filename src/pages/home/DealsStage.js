@@ -36,6 +36,7 @@ export default function DealsStage({ stageName }) {
     }
   }, [updatedDeals]);
 
+  // used for drag and drop
   const [deals, setDeals] = useState(updatedDeals);
 
   const handleOnDragEnd = (result) => {
