@@ -158,17 +158,14 @@ export default function Pipeline() {
                   className={styles.dealsContainer}
                   ref={dealsContainerRef}
                 >
-                  <div>
-                    {' '}
-                    {documents && <DealsStage stageName='Qualified' />}
-                  </div>
-                  <div> {documents && <DealsStage stageName='Demo' />}</div>
-                  <div> {documents && <DealsStage stageName='Proposal' />}</div>
+                  <div>{documents && <DealsStage stageName='Qualified' />}</div>
+                  <div>{documents && <DealsStage stageName='Demo' />}</div>
+                  <div>{documents && <DealsStage stageName='Proposal' />}</div>
                   <div>
                     {documents && <DealsStage stageName='Negotiations' />}
                   </div>
-                  <div> {documents && <DealsStage stageName='Won' />}</div>
-                  <div> {documents && <DealsStage stageName='Lost' />}</div>
+                  <div>{documents && <DealsStage stageName='Won' />}</div>
+                  <div>{documents && <DealsStage stageName='Lost' />}</div>
                 </div>
               </div>
             </div>
