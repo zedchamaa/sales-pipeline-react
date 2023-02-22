@@ -130,7 +130,6 @@ export default function Pipeline() {
           <div className={styles.topbar}>
             <Topbar onClick={handleShowModal} />
           </div>
-
           {documents && (
             <div className={styles.mainContent}>
               <div>
@@ -147,7 +146,6 @@ export default function Pipeline() {
                     </div>
                     <div>${formatNumber(dealsValue)}</div>
                   </div>
-
                   <div className={styles.scrollControl}>
                     <LeftArrowIcon onClick={handleScrollLeft} />
                     <RightArrowIcon onClick={handleScrollRight} />
@@ -158,10 +156,7 @@ export default function Pipeline() {
                   className={styles.dealsContainer}
                   ref={dealsContainerRef}
                 >
-                  <div>
-                    {' '}
-                    {documents && <DealsStage stageName='Qualified' />}
-                  </div>
+                  <div>{documents && <DealsStage stageName='Qualified' />}</div>
                   <div> {documents && <DealsStage stageName='Demo' />}</div>
                   <div> {documents && <DealsStage stageName='Proposal' />}</div>
                   <div>
@@ -173,7 +168,6 @@ export default function Pipeline() {
               </div>
             </div>
           )}
-
           <div className={styles.footer}>
             <Footer />
           </div>
