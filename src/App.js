@@ -7,6 +7,7 @@ import { useState } from 'react';
 // pages & components
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
+import Policy from './pages/policy/Policy';
 import Pipeline from './pages/home/Pipeline';
 import Deals from './pages/deals/Deals';
 import DealsForm from './components/DealsForm';
@@ -61,6 +62,10 @@ function App() {
                 <Route
                   path='/'
                   element={user ? <Pipeline /> : <Navigate to='/login' />}
+                />
+                <Route
+                  path='/policy'
+                  element={user ? <Pipeline /> : <Policy />}
                 />
                 <Route
                   path='/forgot-password'
