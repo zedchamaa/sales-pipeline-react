@@ -6,6 +6,12 @@ import { AuthContextProvider } from './context/AuthContext';
 
 // libraries
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import TagManager from 'react-gtm-module';
+
+// implement Google Tag Manager
+TagManager.initialize({
+  gtmId: 'GTM-58CV8QG',
+});
 
 ReactDOM.render(
   <React.StrictMode>
