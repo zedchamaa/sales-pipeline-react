@@ -199,7 +199,6 @@ a:hover {
   gap: 1.2rem;
   height: 4.3rem;
   line-height: 2.8rem;
-  margin-top: 2rem;
   width: fit-content;
 }
 
@@ -217,10 +216,4 @@ a:hover {
 
 .logo-login a {
   color: var(--color-blue-gray-600);
-}
-
-@media screen and (min-width: 768px) {
-  .logo-login {
-    margin-top: 0;
-  }
 }
