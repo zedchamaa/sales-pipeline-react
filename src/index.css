@@ -148,7 +148,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+footer a:hover {
   color: var(--color-blue-gray-400);
 }
 
@@ -216,4 +216,45 @@ a:hover {
 
 .logo-login a {
   color: var(--color-blue-gray-600);
+}
+
+/* Sidebar Nav (Desktop) */
+
+.link-container {
+  align-items: flex-start;
+  border-radius: 8px;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 600;
+  gap: 1.2rem;
+  height: 5.6rem;
+  line-height: 2.4rem;
+  padding: 1.6rem;
+  width: 100%;
+}
+
+.link-container-active {
+  align-items: flex-start;
+  border-radius: 8px;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 600;
+  gap: 1.2rem;
+  height: 5.6rem;
+  line-height: 2.4rem;
+  padding: 1.6rem;
+  width: 100%;
+  border: 2px solid white;
+}
+
+.link-container,
+.link-container-active,
+a {
+  color: white;
+}
+
+.link-container,
+.link-container-active,
+a.active {
+  color: white;
 }
