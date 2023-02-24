@@ -220,7 +220,8 @@ footer a:hover {
 
 /* Sidebar Nav (Desktop) */
 
-.link-container {
+.link-container,
+.link-container-active {
   align-items: flex-start;
   border-radius: 8px;
   display: flex;
@@ -233,17 +234,11 @@ footer a:hover {
   width: 100%;
 }
 
+.link-container {
+  border: none;
+}
+
 .link-container-active {
-  align-items: flex-start;
-  border-radius: 8px;
-  display: flex;
-  font-size: 1.6rem;
-  font-weight: 600;
-  gap: 1.2rem;
-  height: 5.6rem;
-  line-height: 2.4rem;
-  padding: 1.6rem;
-  width: 100%;
   border: 2px solid white;
 }
 
