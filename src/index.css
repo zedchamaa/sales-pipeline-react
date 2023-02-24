@@ -239,17 +239,15 @@ footer a:hover {
 }
 
 .link-container-active {
-  border: 2px solid white;
+  border: 2px solid var(--color-accent-white);
+  background-color: var(--color-accent-white);
+  color: var(--color-accent-white);
 }
 
-.link-container,
-.link-container-active,
-a {
-  color: white;
+.link-container a {
+  color: var(--color-accent-white);
 }
 
-.link-container,
-.link-container-active,
-a.active {
-  color: white;
+.link-container-active a {
+  color: var(--color-blue-gray-500);
 }

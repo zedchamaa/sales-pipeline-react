@@ -1,4 +1,4 @@
-export default function DealsIcon() {
+export default function DealsIcon({ stroke }) {
   return (
     <svg
       width='24'
@@ -9,7 +9,7 @@ export default function DealsIcon() {
     >
       <path
         d='M21 6V19H3V6M10 10H14M1 1H23V6H1V1Z'
-        stroke='white'
+        stroke={stroke}
         strokeWidth='2'
         strokeLinecap='round'
         strokeLinejoin='round'
