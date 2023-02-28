@@ -34,4 +34,4 @@ appCheck.activate(
   true
 )
 
-export { projectFirestore, projectAuth, timestamp }
+export { projectFirestore, projectAuth, appCheck, timestamp }
